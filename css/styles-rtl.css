@@ -1,0 +1,1929 @@
+/**
+ * @file
+ * RTL companion for the styles.scss file.
+ */
+/* Import Sass mixins, variables, Compass modules, etc. */
+/* HTML element (SMACSS base) rules */
+/**
+ * @file
+ * Normalize-rtl.scss is the RTL language extension of normalize.scss
+ */
+/**
+ * Lists
+ */
+/* line 9, ../sass/_normalize-rtl.scss */
+dd {
+  margin: 0 30px 0 0;
+}
+
+/* Address paddings set differently in IE 6/7. */
+/* line 16, ../sass/_normalize-rtl.scss */
+menu,
+ol,
+ul {
+  padding: 0 30px 0 0;
+}
+
+/* Layout rules */
+/**
+ * @file
+ * RTL companion for the layout-responsive.css file.
+ */
+/**
+ * @file
+ * Positioning for a responsive layout.
+ *
+ * Define CSS classes to create a fluid grid layout with optional sidebars
+ * depending on whether blocks are placed in the left or right sidebars.
+ *
+ * This layout uses the Zen Grids plugin for Compass: http://zengrids.com
+ */
+/**
+ * Use 3 grid columns for smaller screens.
+ */
+@media all and (min-width: 480px) and (max-width: 959px) {
+  /**
+   * The layout when there is only one sidebar, the left one.
+   */
+  /* line 85, ../sass/layouts/_responsive.scss */
+  .sidebar-first {
+    /* Span 2 columns, starting in 2nd column from left. */
+    /* Span 1 column, starting in 1st column from left. */
+  }
+  /* line 87, ../sass/layouts/_responsive.scss */
+  .sidebar-first #content {
+    float: right;
+    width: 66.66667%;
+    margin-right: 33.33333%;
+    margin-left: -100%;
+  }
+  /* line 92, ../sass/layouts/_responsive.scss */
+  .sidebar-first .region-sidebar-first {
+    float: right;
+    width: 33.33333%;
+    margin-right: 0%;
+    margin-left: -33.33333%;
+  }
+
+  /**
+   * The layout when there is only one sidebar, the right one.
+   */
+  /* line 100, ../sass/layouts/_responsive.scss */
+  .sidebar-second {
+    /* Span 2 columns, starting in 1st column from left. */
+    /* Span 1 column, starting in 3rd column from left. */
+  }
+  /* line 102, ../sass/layouts/_responsive.scss */
+  .sidebar-second #content {
+    float: right;
+    width: 66.66667%;
+    margin-right: 0%;
+    margin-left: -66.66667%;
+  }
+  /* line 107, ../sass/layouts/_responsive.scss */
+  .sidebar-second .region-sidebar-second {
+    float: right;
+    width: 33.33333%;
+    margin-right: 66.66667%;
+    margin-left: -100%;
+  }
+
+  /**
+   * The layout when there are two sidebars.
+   */
+  /* line 115, ../sass/layouts/_responsive.scss */
+  .two-sidebars {
+    /* Span 2 columns, starting in 2nd column from left. */
+    /* Span 1 column, starting in 1st column from left. */
+    /* Start a new row and span all 3 columns. */
+  }
+  /* line 117, ../sass/layouts/_responsive.scss */
+  .two-sidebars #content {
+    float: right;
+    width: 66.66667%;
+    margin-right: 33.33333%;
+    margin-left: -100%;
+  }
+  /* line 122, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-first {
+    float: right;
+    width: 33.33333%;
+    margin-right: 0%;
+    margin-left: -33.33333%;
+  }
+  /* line 127, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-second {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    padding-left: 0;
+    padding-right: 0;
+    clear: right;
+    /* Apply the shared properties of grid items in a single, efficient ruleset. */
+    /* Span 1 column, starting in the 1st column from left. */
+    /* Span 1 column, starting in the 2nd column from left. */
+    /* Span 1 column, starting in the 3rd column from left. */
+  }
+  /* line 133, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-second .block {
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 137, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-second .block:nth-child(3n+1) {
+    float: right;
+    width: 33.33333%;
+    margin-right: 0%;
+    margin-left: -33.33333%;
+    clear: right;
+  }
+  /* line 142, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-second .block:nth-child(3n+2) {
+    float: right;
+    width: 33.33333%;
+    margin-right: 33.33333%;
+    margin-left: -66.66667%;
+  }
+  /* line 146, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-second .block:nth-child(3n) {
+    float: right;
+    width: 33.33333%;
+    margin-right: 66.66667%;
+    margin-left: -100%;
+  }
+}
+/**
+ * Use 5 grid columns for larger screens.
+ */
+@media all and (min-width: 960px) {
+  /**
+   * The layout when there is only one sidebar, the left one.
+   */
+  /* line 163, ../sass/layouts/_responsive.scss */
+  .sidebar-first {
+    /* Span 4 columns, starting in 2nd column from left. */
+    /* Span 1 column, starting in 1st column from left. */
+  }
+  /* line 165, ../sass/layouts/_responsive.scss */
+  .sidebar-first #content {
+    float: right;
+    width: 80%;
+    margin-right: 20%;
+    margin-left: -100%;
+  }
+  /* line 170, ../sass/layouts/_responsive.scss */
+  .sidebar-first .region-sidebar-first {
+    float: right;
+    width: 20%;
+    margin-right: 0%;
+    margin-left: -20%;
+  }
+
+  /**
+   * The layout when there is only one sidebar, the right one.
+   */
+  /* line 178, ../sass/layouts/_responsive.scss */
+  .sidebar-second {
+    /* Span 4 columns, starting in 1st column from left. */
+    /* Span 1 column, starting in 5th column from left. */
+  }
+  /* line 180, ../sass/layouts/_responsive.scss */
+  .sidebar-second #content {
+    float: right;
+    width: 80%;
+    margin-right: 0%;
+    margin-left: -80%;
+  }
+  /* line 185, ../sass/layouts/_responsive.scss */
+  .sidebar-second .region-sidebar-second {
+    float: right;
+    width: 20%;
+    margin-right: 80%;
+    margin-left: -100%;
+  }
+
+  /**
+   * The layout when there are two sidebars.
+   */
+  /* line 193, ../sass/layouts/_responsive.scss */
+  .two-sidebars {
+    /* Span 3 columns, starting in 2nd column from left. */
+    /* Span 1 column, starting in 1st column from left. */
+    /* Span 1 column, starting in 5th column from left. */
+  }
+  /* line 195, ../sass/layouts/_responsive.scss */
+  .two-sidebars #content {
+    float: right;
+    width: 60%;
+    margin-right: 20%;
+    margin-left: -80%;
+  }
+  /* line 200, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-first {
+    float: right;
+    width: 20%;
+    margin-right: 0%;
+    margin-left: -20%;
+  }
+  /* line 205, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-second {
+    float: right;
+    width: 20%;
+    margin-right: 80%;
+    margin-left: -100%;
+  }
+}
+/*my css code*/
+@media all and (min-width: 480px) {
+  /* line 231, ../sass/layouts/_responsive.scss */
+  body.normal-content h1#page-title {
+    display: block;
+    width: 8.33333%;
+    height: 248px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -10.83333%;
+    top: 0px;
+    background: url(../images/title_news.png) no-repeat;
+    background-size: 100% 100%;
+    width: 94px;
+  }
+  /* line 245, ../sass/layouts/_responsive.scss */
+  body.normal-content #content {
+    float: right;
+    width: 75%;
+    margin-right: 8.33333%;
+    margin-left: -83.33333%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 250, ../sass/layouts/_responsive.scss */
+  body.normal-content #content ul.article-list li.article-block {
+    width: 32%;
+  }
+  /* line 213, ../sass/layouts/_responsive.scss */
+  body.normal-content #content ul.article-list li.article-block:nth-child(n) {
+    margin-bottom: 2%;
+    margin-right: 2%;
+    float: left;
+  }
+  /* line 218, ../sass/layouts/_responsive.scss */
+  body.normal-content #content ul.article-list li.article-block:nth-child(3n) {
+    margin-right: 0;
+  }
+  /* line 255, ../sass/layouts/_responsive.scss */
+  body.normal-content #content #block-menu-block-2 {
+    position: absolute;
+    display: block;
+    width: 20%;
+    top: 0px;
+    right: -22.22222%;
+  }
+  /* line 264, ../sass/layouts/_responsive.scss */
+  body.normal-content #content .news-content-area .field-name-field-image img {
+    width: 77.77778%;
+  }
+
+  /* line 275, ../sass/layouts/_responsive.scss */
+  body.node-type-about h1#page-title {
+    display: block;
+    width: 8.33333%;
+    height: 248px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -10.83333%;
+    top: 0px;
+    background: url(../images/title_about.png) no-repeat;
+    background-size: 100% 100%;
+    width: 87px;
+  }
+  /* line 289, ../sass/layouts/_responsive.scss */
+  body.node-type-about #content {
+    float: right;
+    width: 75%;
+    margin-right: 8.33333%;
+    margin-left: -83.33333%;
+  }
+  /* line 292, ../sass/layouts/_responsive.scss */
+  body.node-type-about #content #block-menu-block-2 {
+    display: block;
+    width: 20%;
+    position: absolute;
+    right: -22.22222%;
+    top: 0px;
+  }
+
+  /* line 303, ../sass/layouts/_responsive.scss */
+  body.section-contact-us h1#page-title {
+    display: block;
+    width: 8.33333%;
+    height: 248px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -10.83333%;
+    top: 0px;
+    background: url(../images/title_contact.png) no-repeat;
+    background-size: 100% 100%;
+    width: 94px;
+  }
+  /* line 319, ../sass/layouts/_responsive.scss */
+  body.section-contact-us #main #content {
+    float: right;
+    width: 75%;
+    margin-right: 8.33333%;
+    margin-left: -83.33333%;
+  }
+  /* line 322, ../sass/layouts/_responsive.scss */
+  body.section-contact-us #main #content #block-menu-block-2 {
+    display: block;
+    width: 20%;
+    position: absolute;
+    right: -22.22222%;
+    top: 0px;
+  }
+  /* line 330, ../sass/layouts/_responsive.scss */
+  body.section-contact-us #main #block-views-heiankyo-contact-block-2 {
+    clear: right;
+  }
+  /* line 334, ../sass/layouts/_responsive.scss */
+  body.section-contact-us #contact {
+    margin-top: 0px !important;
+  }
+
+  /* line 339, ../sass/layouts/_responsive.scss */
+  #slideblock {
+    float: left;
+    width: 22.22222%;
+    margin-left: 0%;
+    margin-right: -22.22222%;
+  }
+
+  /* line 344, ../sass/layouts/_responsive.scss */
+  body.section-product h1#page-title {
+    display: block;
+    width: 8.33333%;
+    height: 248px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -8.33333%;
+    top: 0px;
+    background: url(../images/title_product.png) no-repeat;
+    background-size: 100% 100%;
+    width: 94px;
+  }
+  /* line 358, ../sass/layouts/_responsive.scss */
+  body.section-product #content {
+    float: right;
+    width: 75%;
+    margin-right: 8.33333%;
+    margin-left: -83.33333%;
+  }
+  /* line 361, ../sass/layouts/_responsive.scss */
+  body.section-product #content #block-menu-block-2 {
+    display: block;
+    width: 20%;
+    position: absolute;
+    right: -22.22222%;
+    top: 0px;
+  }
+
+  /* line 372, ../sass/layouts/_responsive.scss */
+  body.section-delivery-service h1#page-title, body.node-type-product-display h1#page-title {
+    display: block;
+    width: 8.33333%;
+    height: 248px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -10%;
+    top: 0px;
+    background: url(../images/delivery.png) no-repeat;
+    background-size: 100% 100%;
+    width: 94px;
+  }
+  /* line 385, ../sass/layouts/_responsive.scss */
+  body.section-delivery-service #content, body.node-type-product-display #content {
+    float: right;
+    width: 75%;
+    margin-right: 8.33333%;
+    margin-left: -83.33333%;
+  }
+  /* line 389, ../sass/layouts/_responsive.scss */
+  body.section-delivery-service #content #block-menu-block-2, body.node-type-product-display #content #block-menu-block-2 {
+    display: block;
+    width: 20%;
+    position: absolute;
+    right: -22.22222%;
+    top: 0px;
+  }
+
+  /* line 400, ../sass/layouts/_responsive.scss */
+  body.section-cart h1#page-title {
+    display: block;
+    width: 8.33333%;
+    height: 185px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -10%;
+    top: 0px;
+    background: url(../images/title_cart.png) no-repeat;
+    background-size: 100% 100%;
+    width: 94px;
+  }
+  /* line 414, ../sass/layouts/_responsive.scss */
+  body.section-cart #content {
+    float: right;
+    width: 75%;
+    margin-right: 8.33333%;
+    margin-left: -83.33333%;
+  }
+
+  /* line 429, ../sass/layouts/_responsive.scss */
+  body.page-node-30 h1#page-title {
+    color: #b9b209;
+  }
+  /* line 433, ../sass/layouts/_responsive.scss */
+  body.page-node-30 #content {
+    float: right;
+    width: 75%;
+    margin-right: 8.33333%;
+    margin-left: -83.33333%;
+  }
+  /* line 437, ../sass/layouts/_responsive.scss */
+  body.page-node-30 #content #block-menu-block-2 {
+    display: block;
+    width: 20%;
+    position: absolute;
+    right: -22.22222%;
+    top: 0px;
+  }
+
+  /* line 448, ../sass/layouts/_responsive.scss */
+  body.page-userinfo h1#page-title {
+    color: #b9b209;
+  }
+  /* line 452, ../sass/layouts/_responsive.scss */
+  body.page-userinfo #content {
+    float: right;
+    width: 75%;
+    margin-right: 8.33333%;
+    margin-left: -83.33333%;
+  }
+  /* line 456, ../sass/layouts/_responsive.scss */
+  body.page-userinfo #content #block-menu-block-2 {
+    display: block;
+    width: 20%;
+    position: absolute;
+    right: -22.22222%;
+    top: 0px;
+  }
+
+  /* line 466, ../sass/layouts/_responsive.scss */
+  body.page-checkout {
+    /* h1#page-title{
+       display: block;
+       width: zen-grid-item-width(1);
+       height: 256px;
+       overflow: hidden;
+       text-indent: -9999px;
+       position: absolute;
+       left: - zen-grid-item-width(1);
+       top: 0px;
+       background: url(../images/title_cart.png) no-repeat;
+      
+     }*/
+  }
+  /* line 467, ../sass/layouts/_responsive.scss */
+  body.page-checkout h1#page-title {
+    color: #b9b209;
+  }
+  /* line 482, ../sass/layouts/_responsive.scss */
+  body.page-checkout #content {
+    float: right;
+    width: 75%;
+    margin-right: 8.33333%;
+    margin-left: -83.33333%;
+  }
+
+  /* line 498, ../sass/layouts/_responsive.scss */
+  body.front #block-views-heiankyo-product-block-1 h2.block-title {
+    display: block;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -10.83333%;
+    top: -20px;
+    background: url(../images/title_popular.png) no-repeat;
+    background-size: 100% 100%;
+    width: 94px;
+  }
+  /* line 512, ../sass/layouts/_responsive.scss */
+  body.front #block-views-heiankyo-news-activity-block-1 {
+    position: relative;
+  }
+  /* line 514, ../sass/layouts/_responsive.scss */
+  body.front #block-views-heiankyo-news-activity-block-1 h2.block-title {
+    display: block;
+    width: 8.33333%;
+    height: 248px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    top: -50px;
+    left: -11.66667%;
+    background: url(../images/title_news.png) no-repeat;
+    background-size: 100% 100%;
+    width: 94px;
+  }
+  /* line 528, ../sass/layouts/_responsive.scss */
+  body.front #content {
+    float: right;
+    width: 75%;
+    margin-right: 8.33333%;
+    margin-left: -83.33333%;
+  }
+
+  /* line 543, ../sass/layouts/_responsive.scss */
+  body.page-user h1#page-title {
+    color: #b9b209;
+  }
+  /* line 547, ../sass/layouts/_responsive.scss */
+  body.page-user #content {
+    float: right;
+    width: 75%;
+    margin-right: 8.33333%;
+    margin-left: -83.33333%;
+  }
+
+  /* line 561, ../sass/layouts/_responsive.scss */
+  #header #block-menu-block-3 {
+    display: none !important;
+  }
+
+  /* line 565, ../sass/layouts/_responsive.scss */
+  #mobile_header {
+    display: none;
+  }
+
+  /* line 569, ../sass/layouts/_responsive.scss */
+  #content {
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 571, ../sass/layouts/_responsive.scss */
+  #content .breadcrumb {
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 577, ../sass/layouts/_responsive.scss */
+  #content .node-about .field-name-field-bottom-image .field-item {
+    width: 33.33333%;
+    float: left;
+  }
+  /* line 583, ../sass/layouts/_responsive.scss */
+  #content #block-views-heiankyo-product-block-1 {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 585, ../sass/layouts/_responsive.scss */
+  #content #block-views-heiankyo-product-block-1 .view-heiankyo-product {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 587, ../sass/layouts/_responsive.scss */
+  #content #block-views-heiankyo-product-block-1 .view-heiankyo-product .views-row-1 {
+    float: right;
+    width: 66.5%;
+    margin-right: 0%;
+    margin-left: -66.5%;
+  }
+  /* line 590, ../sass/layouts/_responsive.scss */
+  #content #block-views-heiankyo-product-block-1 .view-heiankyo-product .views-row-2 {
+    float: left;
+    width: 32.83333%;
+    margin-left: 0%;
+    margin-right: -32.83333%;
+  }
+  /* line 593, ../sass/layouts/_responsive.scss */
+  #content #block-views-heiankyo-product-block-1 .view-heiankyo-product .views-row-3 {
+    clear: left;
+    float: left;
+    width: 32.83333%;
+    margin-left: 0%;
+    margin-right: -32.83333%;
+  }
+  /* line 597, ../sass/layouts/_responsive.scss */
+  #content #block-views-heiankyo-product-block-1 .view-heiankyo-product .view-footer {
+    clear: right;
+  }
+  /* line 599, ../sass/layouts/_responsive.scss */
+  #content #block-views-heiankyo-product-block-1 .view-heiankyo-product .view-footer a.delivery-service {
+    display: none !important;
+  }
+  /* line 608, ../sass/layouts/_responsive.scss */
+  #content .view-heiankyo-home-delivery li.views-row {
+    width: 32%;
+  }
+  /* line 213, ../sass/layouts/_responsive.scss */
+  #content .view-heiankyo-home-delivery li.views-row:nth-child(n) {
+    margin-bottom: 2%;
+    margin-right: 2%;
+    float: left;
+  }
+  /* line 218, ../sass/layouts/_responsive.scss */
+  #content .view-heiankyo-home-delivery li.views-row:nth-child(3n) {
+    margin-right: 0;
+  }
+  /* line 612, ../sass/layouts/_responsive.scss */
+  #content .view-heiankyo-home-delivery li.views-row .views-field-title {
+    float: right;
+    width: 66.66667%;
+    margin-right: 0%;
+    margin-left: -66.66667%;
+  }
+  /* line 615, ../sass/layouts/_responsive.scss */
+  #content .view-heiankyo-home-delivery li.views-row .views-field-commerce-price {
+    clear: left;
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 622, ../sass/layouts/_responsive.scss */
+  #content #block-views-heiankyo-news-activity-block-1 {
+    clear: right;
+  }
+  /* line 624, ../sass/layouts/_responsive.scss */
+  #content #block-views-heiankyo-news-activity-block-1 li.views-row {
+    width: 32%;
+  }
+  /* line 213, ../sass/layouts/_responsive.scss */
+  #content #block-views-heiankyo-news-activity-block-1 li.views-row:nth-child(n) {
+    margin-bottom: 2%;
+    margin-right: 2%;
+    float: left;
+  }
+  /* line 218, ../sass/layouts/_responsive.scss */
+  #content #block-views-heiankyo-news-activity-block-1 li.views-row:nth-child(3n) {
+    margin-right: 0;
+  }
+  /* line 632, ../sass/layouts/_responsive.scss */
+  #content .node-product-display #block-views-heiankyo-home-delivery-block-1 {
+    float: right;
+    width: 64.16667%;
+    margin-right: 0%;
+    margin-left: -64.16667%;
+  }
+  /* line 635, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .field-name-field-product-sort {
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 638, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .field-name-sort {
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 641, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .field-name-title {
+    clear: left;
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 645, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .field-name-field-japan-name {
+    clear: left;
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 649, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .field-name-commerce-price {
+    clear: left;
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 653, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .field-name-field-product-reference {
+    clear: left;
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 657, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .sharethis-buttons {
+    clear: left;
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 661, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .field-name-field-product-composition {
+    clear: left;
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 665, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .field-name-shop-info {
+    clear: left;
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 669, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .field-name-body {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 673, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .field-name-field-attention {
+    clear: both !important;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 677, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .field-name-shop-info2 {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 681, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .field-name-field-total-count {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 685, ../sass/layouts/_responsive.scss */
+  #content .node-product-display .field-name-field-per-count-limit {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 694, ../sass/layouts/_responsive.scss */
+  #content .view-heiankyo-product.view-display-id-page_1 .views-row .views-field-field-product-img img {
+    width: 50%;
+    /*float: left;*/
+  }
+  /* line 704, ../sass/layouts/_responsive.scss */
+  #content .view-commerce-cart-form #views-form-commerce-cart-form-default table.views-table {
+    width: 100%;
+  }
+  /* line 710, ../sass/layouts/_responsive.scss */
+  #content #block-views-heiankyo-contact-block-1 {
+    float: right;
+    width: 41.66667%;
+    margin-right: 8.33333%;
+    margin-left: -50%;
+  }
+  /* line 713, ../sass/layouts/_responsive.scss */
+  #content #block-webform-client-block-16 {
+    float: right;
+    width: 33.33333%;
+    margin-right: 58.33333%;
+    margin-left: -91.66667%;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  /* line 725, ../sass/layouts/_responsive.scss */
+  body #content {
+    float: right;
+    width: 90.0%;
+    margin-right: 8.33333%;
+    margin-left: -98.33333%;
+  }
+
+  /* line 731, ../sass/layouts/_responsive.scss */
+  body.normal-content h1#page-title {
+    display: block;
+    width: 12.5%;
+    height: 223px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -6.66667%;
+    top: 0px;
+    background: url(../images/title-news.png) no-repeat;
+    background-size: 100% 100%;
+    width: 46px;
+  }
+  /* line 745, ../sass/layouts/_responsive.scss */
+  body.normal-content #content {
+    float: right;
+    width: 90.0%;
+    margin-right: 8.33333%;
+    margin-left: -98.33333%;
+  }
+
+  /* line 752, ../sass/layouts/_responsive.scss */
+  body.node-type-about h1#page-title {
+    display: block;
+    width: 12.5%;
+    height: 317px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -10%;
+    top: 0px;
+    background: url(../images/title_about.png) no-repeat;
+    background-size: 100% 100%;
+    width: 87px;
+  }
+  /* line 767, ../sass/layouts/_responsive.scss */
+  body.node-type-about #content {
+    float: right;
+    width: 90.0%;
+    margin-right: 8.33333%;
+    margin-left: -98.33333%;
+  }
+
+  /* line 775, ../sass/layouts/_responsive.scss */
+  body.section-contact-us h1#page-title {
+    display: block;
+    width: 12.5%;
+    height: 256px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -10%;
+    top: 0px;
+    background: url(../images/title_contact.png) no-repeat;
+    background-size: 100% 100%;
+    width: 94px;
+  }
+  /* line 789, ../sass/layouts/_responsive.scss */
+  body.section-contact-us #content {
+    width: 90% !important;
+  }
+
+  /* line 795, ../sass/layouts/_responsive.scss */
+  body.section-product h1#page-title {
+    display: block;
+    width: 12.5%;
+    height: 245px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -10%;
+    top: 0px;
+    background: url(../images/title_product.png) no-repeat;
+    background-size: 100% 100%;
+    width: 94px;
+  }
+  /* line 809, ../sass/layouts/_responsive.scss */
+  body.section-product #content {
+    float: right;
+    width: 90.0%;
+    margin-right: 8.33333%;
+    margin-left: -98.33333%;
+  }
+
+  /* line 816, ../sass/layouts/_responsive.scss */
+  body.section-delivery-service h1#page-title, body.node-type-product-display h1#page-title {
+    display: block;
+    width: 8.33333%;
+    height: 245px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -10.83333%;
+    top: 0px;
+    background: url(../images/delivery.png) no-repeat;
+    background-size: 100% 100%;
+    width: 94px;
+  }
+  /* line 830, ../sass/layouts/_responsive.scss */
+  body.section-delivery-service #content, body.node-type-product-display #content {
+    float: right;
+    width: 90.0%;
+    margin-right: 8.33333%;
+    margin-left: -98.33333%;
+  }
+
+  /* line 837, ../sass/layouts/_responsive.scss */
+  body.section-cart h1#page-title {
+    display: block;
+    width: 8.33333%;
+    height: 185px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -10.83333%;
+    top: 0px;
+    background: url(../images/title_cart.png) no-repeat;
+    background-size: 100% 100%;
+    width: 96px;
+  }
+  /* line 850, ../sass/layouts/_responsive.scss */
+  body.section-cart #content {
+    float: right;
+    width: 90.0%;
+    margin-right: 8.33333%;
+    margin-left: -98.33333%;
+  }
+
+  /* line 857, ../sass/layouts/_responsive.scss */
+  body.page-checkout h1#page-title {
+    color: #b9b209;
+  }
+  /* line 860, ../sass/layouts/_responsive.scss */
+  body.page-checkout #content {
+    float: right;
+    width: 90.0%;
+    margin-right: 8.33333%;
+    margin-left: -98.33333%;
+  }
+
+  /* line 867, ../sass/layouts/_responsive.scss */
+  body.front #block-views-heiankyo-product-block-1 h2.block-title {
+    display: block;
+    width: 8.33333%;
+    height: 250px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -10.83333%;
+    top: -20px;
+    background: url(../images/title_popular.png) no-repeat;
+    background-size: 100% 100%;
+    width: 94px;
+  }
+  /* line 883, ../sass/layouts/_responsive.scss */
+  body.front #block-views-heiankyo-news-activity-block-1 h2.block-title {
+    display: block;
+    width: 8.33333%;
+    height: 248px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    left: -11.66667%;
+    top: -50px;
+    background: url(../images/title_news.png) no-repeat;
+    background-size: 100% 100%;
+    width: 94px;
+  }
+  /* line 897, ../sass/layouts/_responsive.scss */
+  body.front #content {
+    float: right;
+    width: 90.0%;
+    margin-right: 8.33333%;
+    margin-left: -98.33333%;
+  }
+
+  /* line 904, ../sass/layouts/_responsive.scss */
+  body.page-user h1#page-title {
+    color: #b9b209;
+  }
+  /* line 907, ../sass/layouts/_responsive.scss */
+  body.page-user #content {
+    float: right;
+    width: 90.0%;
+    margin-right: 8.33333%;
+    margin-left: -98.33333%;
+  }
+
+  /* line 912, ../sass/layouts/_responsive.scss */
+  #header {
+    position: static !important;
+    padding: 0px !important;
+  }
+  /* line 916, ../sass/layouts/_responsive.scss */
+  #header .header-wrapper {
+    background: #101010;
+  }
+  /* line 919, ../sass/layouts/_responsive.scss */
+  #header #logo {
+    position: static !important;
+    margin: 20px 0px 20px 20px;
+    background: url(../images/mobilelogo.png) no-repeat;
+    width: 200px;
+    height: 60px;
+    text-indent: -99999px;
+    overflow: hidden;
+    display: inline-block;
+  }
+  /* line 929, ../sass/layouts/_responsive.scss */
+  #header #block-menu-block-1 {
+    display: none;
+    position: static !important;
+  }
+  /* line 933, ../sass/layouts/_responsive.scss */
+  #header .block-revslider {
+    display: inline-block;
+    margin-bottom: 0px !important;
+  }
+
+  /* line 939, ../sass/layouts/_responsive.scss */
+  #slideblock {
+    display: none !important;
+  }
+
+  /* line 952, ../sass/layouts/_responsive.scss */
+  #contact #block-revslider-3 .forcefullwidth_wrapper_tp_banner {
+    height: 600px !important;
+    position: static !important;
+  }
+  /* line 956, ../sass/layouts/_responsive.scss */
+  #contact #block-revslider-3 .fullwidth-container {
+    position: static !important;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 767px) {
+  /* line 965, ../sass/layouts/_responsive.scss */
+  body.normal-content h1#page-title {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -43px;
+    background-size: 100% 100%;
+  }
+  /* line 973, ../sass/layouts/_responsive.scss */
+  body.normal-content #content {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+
+  /* line 980, ../sass/layouts/_responsive.scss */
+  body.node-type-about h1#page-title {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -43px;
+    background-size: 100% 100%;
+  }
+  /* line 989, ../sass/layouts/_responsive.scss */
+  body.node-type-about #content {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+
+  /* line 995, ../sass/layouts/_responsive.scss */
+  body.section-contact-us h1#page-title {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -47px;
+    background-size: 100% 100%;
+  }
+  /* line 1003, ../sass/layouts/_responsive.scss */
+  body.section-contact-us #content {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    width: 100% !important;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1008, ../sass/layouts/_responsive.scss */
+  body.section-contact-us #content #block-menu-block-2 {
+    display: none !important;
+  }
+
+  /* line 1015, ../sass/layouts/_responsive.scss */
+  body.section-product h1#page-title {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -47px;
+    background-size: 100% 100%;
+  }
+  /* line 1023, ../sass/layouts/_responsive.scss */
+  body.section-product #content {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+
+  /* line 1030, ../sass/layouts/_responsive.scss */
+  body.section-delivery-service h1#page-title, body.node-type-product-display h1#page-title {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -47px;
+    background-size: 100% 100%;
+  }
+  /* line 1039, ../sass/layouts/_responsive.scss */
+  body.section-delivery-service #content, body.node-type-product-display #content {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+
+  /* line 1046, ../sass/layouts/_responsive.scss */
+  body.section-cart h1#page-title {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -47px;
+    background-size: 100% 100%;
+  }
+  /* line 1054, ../sass/layouts/_responsive.scss */
+  body.section-cart #content {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+
+  /* line 1060, ../sass/layouts/_responsive.scss */
+  body.page-checkout h1#page-title {
+    color: #b9b209;
+  }
+  /* line 1063, ../sass/layouts/_responsive.scss */
+  body.page-checkout #content {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+
+  /* line 1070, ../sass/layouts/_responsive.scss */
+  body.front #block-views-heiankyo-product-block-1 h2.block-title {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -47px;
+    background-size: 100% 100%;
+    margin-bottom: 40px;
+  }
+  /* line 1081, ../sass/layouts/_responsive.scss */
+  body.front #block-views-heiankyo-news-activity-block-1 h2.block-title {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -47px;
+    background-size: 100% 100%;
+    margin-bottom: 40px;
+  }
+  /* line 1091, ../sass/layouts/_responsive.scss */
+  body.front #content {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+
+  /* line 1098, ../sass/layouts/_responsive.scss */
+  body.page-user h1#page-title {
+    color: #b9b209;
+  }
+  /* line 1101, ../sass/layouts/_responsive.scss */
+  body.page-user #content {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+
+  /* line 1105, ../sass/layouts/_responsive.scss */
+  #header {
+    position: static !important;
+    padding: 0px !important;
+  }
+  /* line 1108, ../sass/layouts/_responsive.scss */
+  #header .header-wrapper {
+    background: #101010;
+  }
+  /* line 1111, ../sass/layouts/_responsive.scss */
+  #header #logo {
+    position: static !important;
+    margin: 20px 0px 20px 20px;
+    background: url(../images/mobilelogo.png) no-repeat;
+    width: 200px;
+    height: 60px;
+    text-indent: -99999px;
+    overflow: hidden;
+    display: inline-block;
+  }
+  /* line 1121, ../sass/layouts/_responsive.scss */
+  #header #block-menu-block-1 {
+    display: none;
+    position: static !important;
+  }
+  /* line 1125, ../sass/layouts/_responsive.scss */
+  #header .block-revslider {
+    display: inline-block;
+    margin-bottom: 0px !important;
+  }
+
+  /* line 1130, ../sass/layouts/_responsive.scss */
+  h1#page-title {
+    margin-bottom: 40px;
+  }
+
+  /* line 1135, ../sass/layouts/_responsive.scss */
+  #main #content {
+    padding: 0px 10px;
+  }
+  /* line 1139, ../sass/layouts/_responsive.scss */
+  #main #content ul.article-list li.article-block {
+    width: 49%;
+  }
+  /* line 213, ../sass/layouts/_responsive.scss */
+  #main #content ul.article-list li.article-block:nth-child(n) {
+    margin-bottom: 2%;
+    margin-right: 2%;
+    float: left;
+  }
+  /* line 218, ../sass/layouts/_responsive.scss */
+  #main #content ul.article-list li.article-block:nth-child(2n) {
+    margin-right: 0;
+  }
+  /* line 1143, ../sass/layouts/_responsive.scss */
+  #main #content #block-menu-block-2 {
+    position: absolute;
+    display: block;
+    width: 15.0%;
+    top: 0px;
+    right: -16.66667%;
+  }
+  /* line 1152, ../sass/layouts/_responsive.scss */
+  #main #content .news-content-area .field-name-field-image img {
+    width: 58.33333%;
+  }
+  /* line 1160, ../sass/layouts/_responsive.scss */
+  #main #content #block-menu-block-2 {
+    display: none;
+  }
+  /* line 1163, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-product-block-1:before {
+    display: none !important;
+  }
+  /* line 1168, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-product-block-1 .view-heiankyo-product .views-row-1 {
+    float: right;
+    width: 50%;
+    margin-right: 0%;
+    margin-left: -50%;
+  }
+  /* line 1171, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-product-block-1 .view-heiankyo-product .views-row-2 {
+    float: left;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: -50%;
+  }
+  /* line 1174, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-product-block-1 .view-heiankyo-product .views-row-3 {
+    display: none;
+  }
+  /* line 1178, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-product-block-1 .view-footer {
+    text-align: center !important;
+  }
+  /* line 1180, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-product-block-1 .view-footer a.delivery-service {
+    display: inline-block !important;
+  }
+  /* line 1187, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-news-activity-block-1 li.views-row {
+    width: 49%;
+  }
+  /* line 213, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-news-activity-block-1 li.views-row:nth-child(n) {
+    margin-bottom: 2%;
+    margin-right: 2%;
+    float: left;
+  }
+  /* line 218, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-news-activity-block-1 li.views-row:nth-child(2n) {
+    margin-right: 0;
+  }
+  /* line 1189, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-news-activity-block-1 li.views-row:nth-child(3n) {
+    display: none !important;
+  }
+  /* line 1195, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-news-activity-block-1:before {
+    display: none !important;
+  }
+  /* line 1200, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display #block-views-heiankyo-home-delivery-block-1 {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1203, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-field-product-sort {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1207, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-sort {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1211, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-title {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1215, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-field-japan-name {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1219, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-commerce-price {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1223, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-field-product-reference {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1227, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .sharethis-buttons {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1231, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-field-product-composition {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1235, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-shop-info {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1239, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-body {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1243, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-field-attention {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1248, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-contact-block-1 {
+    float: right;
+    width: 50%;
+    margin-right: 0%;
+    margin-left: -50%;
+  }
+  /* line 1251, ../sass/layouts/_responsive.scss */
+  #main #content #block-webform-client-block-16 {
+    float: right;
+    width: 41.66667%;
+    margin-right: 58.33333%;
+    margin-left: -100%;
+  }
+
+  /* line 1261, ../sass/layouts/_responsive.scss */
+  #contact #block-revslider-3 .forcefullwidth_wrapper_tp_banner {
+    position: static !important;
+  }
+  /* line 1264, ../sass/layouts/_responsive.scss */
+  #contact #block-revslider-3 .fullwidth-container {
+    position: static !important;
+  }
+
+  /* line 1269, ../sass/layouts/_responsive.scss */
+  #slideblock {
+    display: none;
+  }
+}
+@media all and (max-width: 479px) {
+  /* line 1275, ../sass/layouts/_responsive.scss */
+  #slideblock {
+    display: none !important;
+  }
+
+  /* line 1279, ../sass/layouts/_responsive.scss */
+  body.node-type-about h1#page-title {
+    display: block;
+    width: 87px;
+    height: 317px;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -43px;
+    background: url(../images/title_about.png) no-repeat;
+    text-indent: -99999px;
+    overflow: hidden;
+  }
+
+  /* line 1294, ../sass/layouts/_responsive.scss */
+  body.normal-content h1#page-title {
+    display: block;
+    width: 87px;
+    height: 317px;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -43px;
+    background: url(../images/title_news.png) no-repeat;
+    text-indent: -99999px;
+    overflow: hidden;
+  }
+
+  /* line 1309, ../sass/layouts/_responsive.scss */
+  body.section-product h1#page-title {
+    display: block;
+    width: 94px;
+    height: 250px;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -47px;
+    background: url(../images/title_product.png) no-repeat;
+    text-indent: -99999px;
+    overflow: hidden;
+  }
+
+  /* line 1323, ../sass/layouts/_responsive.scss */
+  body.section-delivery-service h1#page-title, body.node-type-product-display h1#page-title {
+    display: block;
+    width: 94px;
+    height: 250px;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -47px;
+    background: url(../images/delivery.png) no-repeat;
+    text-indent: -99999px;
+    overflow: hidden;
+  }
+
+  /* line 1337, ../sass/layouts/_responsive.scss */
+  body.section-contact-us h1#page-title {
+    display: block;
+    width: 94px;
+    height: 250px;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -47px;
+    background: url(../images/title_contact.png) no-repeat;
+    text-indent: -99999px;
+    overflow: hidden;
+  }
+
+  /* line 1351, ../sass/layouts/_responsive.scss */
+  body.section-cart h1#page-title {
+    display: block;
+    width: 94px;
+    height: 250px;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -47px;
+    background: url(../images/title_cart.png) no-repeat;
+    text-indent: -99999px;
+    overflow: hidden;
+  }
+
+  /* line 1366, ../sass/layouts/_responsive.scss */
+  body.front #block-views-heiankyo-product-block-1 h2.block-title {
+    display: block;
+    width: 94px;
+    height: 250px;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -47px;
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url(../images/title_popular.png) no-repeat;
+    margin-bottom: 40px;
+  }
+  /* line 1381, ../sass/layouts/_responsive.scss */
+  body.front #block-views-heiankyo-news-activity-block-1 h2.block-title {
+    display: block;
+    width: 94px;
+    height: 250px;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    margin-left: -47px;
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url(../images/title_news.png) no-repeat;
+    margin-bottom: 40px;
+  }
+
+  /* line 1397, ../sass/layouts/_responsive.scss */
+  #header {
+    position: static !important;
+    padding: 0px !important;
+  }
+  /* line 1400, ../sass/layouts/_responsive.scss */
+  #header .header-wrapper {
+    background: #101010;
+  }
+  /* line 1403, ../sass/layouts/_responsive.scss */
+  #header #logo {
+    position: static !important;
+    margin: 20px 0px 20px 20px;
+    background: url(../images/mobilelogo.png) no-repeat;
+    width: 200px;
+    height: 60px;
+    text-indent: -99999px;
+    overflow: hidden;
+    display: inline-block;
+  }
+  /* line 1413, ../sass/layouts/_responsive.scss */
+  #header #block-menu-block-1 {
+    display: none;
+    position: static !important;
+  }
+  /* line 1417, ../sass/layouts/_responsive.scss */
+  #header .block-revslider {
+    display: inline-block;
+    margin-bottom: 0px !important;
+  }
+
+  /* line 1422, ../sass/layouts/_responsive.scss */
+  h1#page-title {
+    margin-bottom: 40px;
+  }
+
+  /* line 1426, ../sass/layouts/_responsive.scss */
+  #main {
+    min-height: 0px !important;
+  }
+  /* line 1428, ../sass/layouts/_responsive.scss */
+  #main #content {
+    padding-top: 0px !important;
+  }
+  /* line 1430, ../sass/layouts/_responsive.scss */
+  #main #content #slideblock {
+    display: none;
+  }
+  /* line 1433, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-product-block-1:before {
+    display: none !important;
+  }
+  /* line 1439, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-product-block-1 .view-heiankyo-product .views-row-1 {
+    float: right;
+    width: 50%;
+    margin-right: 0%;
+    margin-left: -50%;
+  }
+  /* line 1442, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-product-block-1 .view-heiankyo-product .views-row-2 {
+    float: left;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: -50%;
+  }
+  /* line 1445, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-product-block-1 .view-heiankyo-product .views-row-3 {
+    display: none;
+  }
+  /* line 1449, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-product-block-1 .view-footer {
+    clear: right;
+    margin-bottom: 40px;
+    text-align: center !important;
+  }
+  /* line 1453, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-product-block-1 .view-footer a.delivery-service {
+    display: inline-block !important;
+  }
+  /* line 1460, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-news-activity-block-1 li.views-row {
+    width: 49%;
+  }
+  /* line 213, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-news-activity-block-1 li.views-row:nth-child(n) {
+    margin-bottom: 2%;
+    margin-right: 2%;
+    float: left;
+  }
+  /* line 218, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-news-activity-block-1 li.views-row:nth-child(2n) {
+    margin-right: 0;
+  }
+  /* line 1462, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-news-activity-block-1 li.views-row:nth-child(3n) {
+    display: none !important;
+  }
+  /* line 1468, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-heiankyo-news-activity-block-1:before {
+    display: none !important;
+  }
+  /* line 1474, ../sass/layouts/_responsive.scss */
+  #main #content .view-heiankyo-product.view-display-id-page_1 .views-row .views-field-field-product-img img {
+    width: 50%;
+    float: left;
+  }
+  /* line 1482, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-shop-info {
+    display: block !important;
+  }
+  /* line 1486, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-field-attention p {
+    margin: 0px;
+  }
+  /* line 1492, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-shop-info2 p {
+    padding-bottom: 10px;
+    margin: 0px;
+  }
+  /* line 1495, ../sass/layouts/_responsive.scss */
+  #main #content .node-product-display .field-name-shop-info2 p a {
+    display: inline-block;
+  }
+  /* line 1504, ../sass/layouts/_responsive.scss */
+  #main #content .view-heiankyo-home-delivery li.views-row .views-field-title {
+    float: right;
+    width: 66.66667%;
+    margin-right: 0%;
+    margin-left: -66.66667%;
+  }
+  /* line 1507, ../sass/layouts/_responsive.scss */
+  #main #content .view-heiankyo-home-delivery li.views-row .views-field-commerce-price {
+    clear: left;
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+
+  /* line 1519, ../sass/layouts/_responsive.scss */
+  #contact #block-revslider-3 .forcefullwidth_wrapper_tp_banner {
+    height: 600px !important;
+    position: static !important;
+  }
+  /* line 1523, ../sass/layouts/_responsive.scss */
+  #contact #block-revslider-3 .fullwidth-container {
+    position: static !important;
+  }
+  /* line 1527, ../sass/layouts/_responsive.scss */
+  #contact #block-webform-client-block-10 {
+    width: 100% !important;
+    left: 0px !important;
+    margin-top: 10px !important;
+    margin-left: 0px !important;
+    padding-right: 0px !important;
+    background-size: 26px 138px !important;
+    padding-top: 150px !important;
+    background-position: top center !important;
+  }
+  /* line 1536, ../sass/layouts/_responsive.scss */
+  #contact #block-webform-client-block-10 #webform-client-form-10 {
+    padding: 0 20px;
+  }
+}
+/* Component (SMACSS module) rules */
+/**
+ * @file
+ * RTL companion for the modular-styles.css file.
+ */
+/**
+ * Branding header.
+ */
+/* Wrapping link for logo. */
+/* line 11, ../sass/components/_misc-rtl.scss */
+.header__logo {
+  float: right;
+}
+
+/* The secondary menu (login, etc.) */
+/* line 16, ../sass/components/_misc-rtl.scss */
+.header__secondary-menu {
+  float: left;
+}
+
+/**
+ * Navigation bar.
+ */
+/* Main menu and secondary menu links and menu block links. */
+/* line 27, ../sass/components/_misc-rtl.scss */
+#navigation .links,
+#navigation .menu {
+  text-align: right;
+}
+/* line 30, ../sass/components/_misc-rtl.scss */
+#navigation .links li,
+#navigation .menu li {
+  /* A simple method to get navigation links to appear in one line. */
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+/**
+ * Messages.
+ */
+/* line 41, ../sass/components/_misc-rtl.scss */
+.messages, .messages--status, .messages--warning, .messages--error {
+  padding: 10px 50px 10px 10px;
+  background-position: 99% 8px;
+}
+
+/**
+ * Tabs.
+ */
+/* line 58, ../sass/components/_misc-rtl.scss */
+.tabs-primary__tab, .tabs-primary__tab.is-active, .tabs-secondary__tab,
+.tabs-secondary__tab.is-active {
+  float: right;
+}
+
+/**
+ * Inline styles.
+ */
+/* List of links */
+/* line 77, ../sass/components/_misc-rtl.scss */
+.inline li {
+  /* Bug in Safari causes display: inline to fail. */
+  display: inline-block;
+  padding: 0 0 0 1em;
+}
+
+/* The inline field label used by the Fences.module */
+/* line 84, ../sass/components/_misc-rtl.scss */
+span.field-label {
+  padding: 0 0 0 1em;
+}
+
+/**
+ * "More" links.
+ */
+/* line 91, ../sass/components/_misc-rtl.scss */
+.more-link {
+  text-align: left;
+}
+
+/* line 94, ../sass/components/_misc-rtl.scss */
+.more-help-link {
+  text-align: left;
+}
+
+/* line 97, ../sass/components/_misc-rtl.scss */
+.more-help-link a {
+  background-position: 100% 50%;
+  padding: 1px 20px 1px 0;
+}
+
+/**
+ * Menus.
+ */
+/* line 105, ../sass/components/_misc-rtl.scss */
+.menu__item.is-collapsed {
+  list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABNJREFUCB1j4GASYFJgcmD+A4IADUIDfIUMT4wAAAAASUVORK5CYII=');
+}
+
+/**
+ * Comments.
+ */
+/* Nested comments are indented. */
+/* line 117, ../sass/components/_misc-rtl.scss */
+.indented {
+  margin-left: 0;
+  margin-right: 30px;
+}
+
+/**
+ * Forms.
+ */
+/* Drupal's default login form block */
+/* line 127, ../sass/components/_misc-rtl.scss */
+#user-login-form {
+  text-align: right;
+}
+
+/* line 132, ../sass/components/_misc-rtl.scss */
+html.js #user-login-form li.openid-link,
+#user-login-form li.openid-link {
+  /* Un-do some of the padding on the ul list. */
+  margin-left: 0;
+  margin-right: -20px;
+}
+
+/*
+ * Drupal admin tables.
+ */
+/* line 142, ../sass/components/_misc-rtl.scss */
+form th {
+  text-align: right;
+  padding-left: 1em;
+  padding-right: 0;
+}
+
+/**
+ * Collapsible fieldsets.
+ *
+ * @see collapse.js
+ */
+/* line 155, ../sass/components/_misc-rtl.scss */
+html.js .collapsible .fieldset-legend {
+  background-position: 98% 75%;
+  padding-left: 0;
+  padding-right: 15px;
+}
+/* line 160, ../sass/components/_misc-rtl.scss */
+html.js .collapsed .fieldset-legend {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABNJREFUCB1j4GASYFJgcmD+A4IADUIDfIUMT4wAAAAASUVORK5CYII=');
+  background-position: 98% 50%;
+}
+
+/* SMACSS theme rules */
+/* @import "theme-A-rtl"; */
+/* @import "theme-B-rtl"; */

@@ -1,0 +1,1542 @@
+/**
+ * @file
+ * Positioning for a responsive layout.
+ *
+ * Define CSS classes to create a fluid grid layout with optional sidebars
+ * depending on whether blocks are placed in the left or right sidebars.
+ *
+ * This layout uses the Zen Grids plugin for Compass: http://zengrids.com
+ */
+
+// We are going to create a fluid grid with 1, 3, or 5 columns and 20px gutters
+// between columns (applied as 10px of left/right padding on each column).
+$zen-column-count:  12;
+$zen-gutter-width:  20px;
+
+// If you need IE6/7 support for box-sizing: border-box (default), see _init.scss
+//$zen-box-sizing: content-box;
+
+// You can generate more efficient CSS if you manually apply the
+// zen-grid-item-base mixin to all grid items from within a single ruleset.
+$zen-auto-include-item-base: false;
+// $zen-auto-include-flow-item-base: false;
+
+// Suppress this section of CSS for RTL layouts since it contains no LTR-specific styles.
+@if $zen-reverse-all-floats == false {
+
+/**
+ * Center the page.
+ *
+ * For screen sizes larger than 1200px, prevent excessively long lines of text
+ * by setting a max-width.
+ */
+#page{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+}
+
+/* Apply the shared properties of grid items in a single, efficient ruleset. */
+#header,
+#content,
+#navigation,
+.region-sidebar-first,
+.region-sidebar-second,
+#footer {
+  // See the note about $zen-auto-include-item-base above.
+  @include zen-grid-item-base();
+}
+
+/* Containers for grid items and flow items. */
+#header,
+#main,
+#footer {
+  @include zen-grid-container();
+}
+
+/* Navigation bar */
+@media all and (min-width: 480px) {
+  #main {
+    /* Move all the children of #main down to make room. */
+    padding-top: $nav-height;
+    position: relative;
+  }
+  #navigation {
+    /* Move the navbar up inside #main's padding. */
+    position: absolute;
+    top: 0;
+    height: $nav-height;
+    width: $zen-grid-width;
+  }
+}
+
+} // End of @if $zen-reverse-all-floats == true
+
+/**
+ * Use 3 grid columns for smaller screens.
+ */
+@media all and (min-width: 480px) and (max-width: 959px) {
+
+  $zen-column-count: 3;
+
+  /**
+   * The layout when there is only one sidebar, the left one.
+   */
+  .sidebar-first {
+    /* Span 2 columns, starting in 2nd column from left. */
+    #content {
+      @include zen-grid-item(2, 2);
+    }
+
+    /* Span 1 column, starting in 1st column from left. */
+    .region-sidebar-first {
+      @include zen-grid-item(1, 1);
+    }
+  }
+
+  /**
+   * The layout when there is only one sidebar, the right one.
+   */
+  .sidebar-second {
+    /* Span 2 columns, starting in 1st column from left. */
+    #content {
+      @include zen-grid-item(2, 1);
+    }
+
+    /* Span 1 column, starting in 3rd column from left. */
+    .region-sidebar-second {
+      @include zen-grid-item(1, 3);
+    }
+  }
+
+  /**
+   * The layout when there are two sidebars.
+   */
+  .two-sidebars {
+    /* Span 2 columns, starting in 2nd column from left. */
+    #content {
+      @include zen-grid-item(2, 2);
+    }
+
+    /* Span 1 column, starting in 1st column from left. */
+    .region-sidebar-first {
+      @include zen-grid-item(1, 1);
+    }
+
+    /* Start a new row and span all 3 columns. */
+    .region-sidebar-second {
+      @include zen-grid-item(3, 1);
+      @include zen-nested-container(); // Since we're making every block in this region be a grid item.
+      @include zen-clear();
+
+      /* Apply the shared properties of grid items in a single, efficient ruleset. */
+      .block {
+        @include zen-grid-item-base();
+      }
+      /* Span 1 column, starting in the 1st column from left. */
+      .block:nth-child(3n+1) {
+        @include zen-grid-item(1, 1);
+        @include zen-clear();
+      }
+      /* Span 1 column, starting in the 2nd column from left. */
+      .block:nth-child(3n+2) {
+        @include zen-grid-item(1, 2);
+      }
+      /* Span 1 column, starting in the 3rd column from left. */
+      .block:nth-child(3n) {
+        @include zen-grid-item(1, 3);
+      }
+    }
+  }
+}
+
+/**
+ * Use 5 grid columns for larger screens.
+ */
+@media all and (min-width: 960px) {
+
+  $zen-column-count: 5;
+
+  /**
+   * The layout when there is only one sidebar, the left one.
+   */
+  .sidebar-first {
+    /* Span 4 columns, starting in 2nd column from left. */
+    #content {
+      @include zen-grid-item(4, 2);
+    }
+
+    /* Span 1 column, starting in 1st column from left. */
+    .region-sidebar-first {
+      @include zen-grid-item(1, 1);
+    }
+  }
+
+  /**
+   * The layout when there is only one sidebar, the right one.
+   */
+  .sidebar-second {
+    /* Span 4 columns, starting in 1st column from left. */
+    #content {
+      @include zen-grid-item(4, 1);
+    }
+
+    /* Span 1 column, starting in 5th column from left. */
+    .region-sidebar-second {
+      @include zen-grid-item(1, 5);
+    }
+  }
+
+  /**
+   * The layout when there are two sidebars.
+   */
+  .two-sidebars {
+    /* Span 3 columns, starting in 2nd column from left. */
+    #content {
+      @include zen-grid-item(3, 2);
+    }
+
+    /* Span 1 column, starting in 1st column from left. */
+    .region-sidebar-first {
+      @include zen-grid-item(1, 1);
+    }
+
+    /* Span 1 column, starting in 5th column from left. */
+    .region-sidebar-second {
+      @include zen-grid-item(1, 5);
+    }
+  }
+}
+
+@mixin grid($numPerRow, $margin) {
+    width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+    &:nth-child(n) {
+        margin-bottom: $margin;
+        margin-right: $margin;
+        float: left;
+    }
+    &:nth-child(#{$numPerRow}n) {
+        margin-right: 0;
+
+    }
+}
+$main:#b9b209;
+$textcolor:#898989;
+/*my css code*/
+$zen-column-count:  12;
+
+@media all and (min-width: 480px) {
+
+  body.normal-content{
+    h1#page-title{
+      display: block;
+      width: zen-grid-item-width(1);
+      height: 248px;
+      overflow: hidden;
+      text-indent: -9999px;
+      position: absolute;
+      left: - zen-grid-item-width(1.3);
+      top: 0px;
+      background: url(../images/title_news.png) no-repeat;
+      background-size:100% 100%;
+      width: 94px;
+
+    }
+    #content{
+      @include zen-grid-item(9,2);
+      @include zen-nested-container();
+      $zen-column-count:  9;
+      ul.article-list{
+        li.article-block{
+
+         @include grid(3,2%);
+        }
+      }
+      #block-menu-block-2{
+        position: absolute;
+        display: block;
+        width: zen-grid-item-width(1.8);
+        top: 0px;
+        right: - zen-grid-item-width(2);
+      }
+      .news-content-area{
+        .field-name-field-image{
+          img{
+            width: zen-grid-item-width(7);
+          }
+        }
+      }
+      
+    }
+  }
+
+$zen-column-count:  12;
+  body.node-type-about{
+    h1#page-title{
+      display: block;
+      width: zen-grid-item-width(1);
+      height: 248px;
+      overflow: hidden;
+      text-indent: -9999px;
+      position: absolute;
+      left: - zen-grid-item-width(1.3);
+      top: 0px;
+      background: url(../images/title_about.png) no-repeat;
+      background-size:100% 100%;
+      width: 87px;
+
+    }
+     #content{
+      @include zen-grid-item(9,2);
+      $zen-column-count:  9;
+      #block-menu-block-2{
+        display: block;
+        width: zen-grid-item-width(1.8);
+        position: absolute;
+        right: - zen-grid-item-width(2);
+        top: 0px;
+      }
+    }
+  }
+  $zen-column-count:  12;
+  body.section-contact-us{
+    h1#page-title{
+      display: block;
+      width: zen-grid-item-width(1);
+      height: 248px;
+      overflow: hidden;
+      text-indent: -9999px;
+      position: absolute;
+      left: - zen-grid-item-width(1.3);
+      top: 0px;
+      background: url(../images/title_contact.png) no-repeat;
+      background-size:100% 100%;
+      width: 94px;
+
+    }
+    #main{
+
+      #content{
+        @include zen-grid-item(9,2);                      
+        $zen-column-count:  9;
+        #block-menu-block-2{
+          display: block;
+          width: zen-grid-item-width(1.8);
+          position: absolute;
+          right: - zen-grid-item-width(2);
+          top: 0px;
+        }
+      }
+      #block-views-heiankyo-contact-block-2{
+          @include zen-clear();
+        }
+    }
+    #contact{
+      margin-top: 0px !important;
+    }
+  }
+
+   #slideblock{
+         @include zen-grid-item(2,1,right);
+      }
+  $zen-column-count: 12;
+  body.section-product{
+    h1#page-title{
+      display: block;
+      width: zen-grid-item-width(1);
+      height: 248px;
+      overflow: hidden;
+      text-indent: -9999px;
+      position: absolute;
+      left: - zen-grid-item-width(1);
+      top: 0px;
+      background: url(../images/title_product.png) no-repeat;
+      background-size:100% 100%;
+      width: 94px;
+
+    }
+     #content{
+      @include zen-grid-item(9,2);
+      $zen-column-count:  9;
+      #block-menu-block-2{
+        display: block;
+        width: zen-grid-item-width(1.8);
+        position: absolute;
+        right: - zen-grid-item-width(2);
+        top: 0px;
+      }
+    }
+  }
+  $zen-column-count: 12;
+  body.section-delivery-service,body.node-type-product-display{
+    h1#page-title{
+      display: block;
+      width: zen-grid-item-width(1);
+      height: 248px;
+      overflow: hidden;
+      text-indent: -9999px;
+      position: absolute;
+      left: - zen-grid-item-width(1.2);
+      top: 0px;
+      background: url(../images/delivery.png) no-repeat;
+      background-size:100% 100%;
+      width: 94px;
+    }
+    #content{
+        @include zen-grid-item(9,2);
+        
+        $zen-column-count:  9;
+        #block-menu-block-2{
+          display: block;
+          width: zen-grid-item-width(1.8);
+          position: absolute;
+          right: - zen-grid-item-width(2);
+          top: 0px;
+        }
+      }
+  }
+  $zen-column-count:12;
+  body.section-cart{
+    h1#page-title{
+      display: block;
+      width: zen-grid-item-width(1);
+      height:185px;
+      overflow: hidden;
+      text-indent: -9999px;
+      position: absolute;
+      left: - zen-grid-item-width(1.2);
+      top: 0px;
+      background: url(../images/title_cart.png) no-repeat;
+      background-size:100% 100%;
+      width: 94px;
+
+    }
+    #content{
+      @include zen-grid-item(9,2);
+      
+      $zen-column-count:  9;
+      // #block-menu-block-2{
+      //   display: block;
+      //   width: zen-grid-item-width(1.8);
+      //   position: absolute;
+      //   right: - zen-grid-item-width(2);
+      //   top: 0px;
+      // }
+    }
+  }
+  $zen-column-count:12;
+  body.page-node-30{
+     h1#page-title{
+      color: $main;
+     }
+   
+    #content{
+      @include zen-grid-item(9,2);
+      
+      $zen-column-count:  9;
+      #block-menu-block-2{
+        display: block;
+        width: zen-grid-item-width(1.8);
+        position: absolute;
+        right: - zen-grid-item-width(2);
+        top: 0px;
+      }
+    }
+  }
+  $zen-column-count:12;
+  body.page-userinfo{
+     h1#page-title{
+      color: $main;
+     }
+   
+    #content{
+      @include zen-grid-item(9,2);
+      
+      $zen-column-count:  9;
+      #block-menu-block-2{
+        display: block;
+        width: zen-grid-item-width(1.8);
+        position: absolute;
+        right: - zen-grid-item-width(2);
+        top: 0px;
+      }
+    }
+  }
+  $zen-column-count:12;
+  body.page-checkout{
+     h1#page-title{
+      color: $main;
+     }
+   /* h1#page-title{
+      display: block;
+      width: zen-grid-item-width(1);
+      height: 256px;
+      overflow: hidden;
+      text-indent: -9999px;
+      position: absolute;
+      left: - zen-grid-item-width(1);
+      top: 0px;
+      background: url(../images/title_cart.png) no-repeat;
+     
+    }*/
+    #content{
+      @include zen-grid-item(9,2);
+      
+      $zen-column-count:  9;
+      // #block-menu-block-2{
+      //   display: block;
+      //   width: zen-grid-item-width(1.8);
+      //   position: absolute;
+      //   right: - zen-grid-item-width(2);
+      //   top: 0px;
+      // }
+    }
+  }
+  $zen-column-count:12;
+  body.front{
+    #block-views-heiankyo-product-block-1{
+      h2.block-title{
+        display: block;
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        text-indent: -9999px;
+        position: absolute;
+        left: - zen-grid-item-width(1.3);
+        top: -20px;
+        background: url(../images/title_popular.png) no-repeat;
+        background-size:100% 100%;
+        width: 94px;
+      }
+    }
+    #block-views-heiankyo-news-activity-block-1{
+      position: relative;
+      h2.block-title{
+        display: block;
+        width:zen-grid-item-width(1);
+        height: 248px;
+        overflow: hidden;
+        text-indent: -9999px;
+        position: absolute;
+        top: -50px;
+        left: - zen-grid-item-width(1.4);
+        background: url(../images/title_news.png) no-repeat;
+        background-size:100% 100%;
+        width: 94px;
+      }
+    }
+    #content{
+      @include zen-grid-item(9,2);
+      
+      $zen-column-count:  9;
+      // #block-menu-block-2{
+      //   display: block;
+      //   width: zen-grid-item-width(1.8);
+      //   position: absolute;
+      //   right: - zen-grid-item-width(2);
+      //   top: 0px;
+      // }
+    }
+  }
+  $zen-column-count:12;
+  body.page-user{
+    h1#page-title{
+      color: $main;
+     }
+  
+    #content{
+      @include zen-grid-item(9,2);
+      
+      $zen-column-count:  9;
+      // #block-menu-block-2{
+      //   display: block;
+      //   width: zen-grid-item-width(1.8);
+      //   position: absolute;
+      //   right: - zen-grid-item-width(2);
+      //   top: 0px;
+      // }
+    }
+  }
+  #header{
+    #block-menu-block-3{
+      display: none !important;
+    }
+  }
+   #mobile_header{
+    display: none;
+  }
+$zen-column-count:  12;
+  #content{
+     @include zen-grid-item-base();
+    .breadcrumb{
+
+      @include zen-grid-item-base();
+    }
+      .node-about{
+        .field-name-field-bottom-image{
+          .field-item{
+            width: zen-grid-item-width(4);
+            float: left;
+          }
+        }
+      }
+      #block-views-heiankyo-product-block-1{
+         @include zen-grid-item(12,1);
+        .view-heiankyo-product{
+          @include zen-grid-item(12,1);
+          .views-row-1 {
+             @include zen-grid-item(7.98,1);
+          }
+          .views-row-2{
+            @include zen-grid-item(3.94,1,right);
+          }
+          .views-row-3{
+            @include zen-clear(right);
+            @include zen-grid-item(3.94,1,right);
+          }
+          .view-footer{
+            @include zen-clear();
+            a.delivery-service{
+              display: none !important;
+            }
+          }
+        }
+        
+      }
+      $zen-column-count: 28;
+      .view-heiankyo-home-delivery{
+        li.views-row{
+            @include grid(3,2%);
+          $zen-column-count: 12;
+          
+          .views-field-title{
+            @include zen-grid-item(8,1);
+          }
+          .views-field-commerce-price{
+            @include zen-clear(right);
+            @include zen-grid-item(4,1,right);
+          }
+        }
+    }
+   $zen-column-count: 28;
+    #block-views-heiankyo-news-activity-block-1{
+      @include zen-clear();
+      li.views-row{
+           @include grid(3,2%);
+          
+        }
+     
+    }
+    $zen-column-count: 12;
+    .node-product-display{
+      #block-views-heiankyo-home-delivery-block-1{
+        @include zen-grid-item(7.7,1);
+      }
+      .field-name-field-product-sort{
+        @include zen-grid-item(4,1,right);
+      }
+      .field-name-sort{
+        @include zen-grid-item(4,1,right);
+      }
+      .field-name-title{
+        @include zen-clear(right);
+        @include zen-grid-item(4,1,right);
+      }
+      .field-name-field-japan-name{
+        @include zen-clear(right);
+        @include zen-grid-item(4,1,right);
+      }
+      .field-name-commerce-price{
+        @include zen-clear(right);
+        @include zen-grid-item(4,1,right);
+      }
+      .field-name-field-product-reference{
+        @include zen-clear(right);
+        @include zen-grid-item(4,1,right);
+      }
+      .sharethis-buttons{
+        @include zen-clear(right);
+        @include zen-grid-item(4,1,right);
+      }
+      .field-name-field-product-composition{
+        @include zen-clear(right);
+        @include zen-grid-item(4,1,right);
+      }
+      .field-name-shop-info {
+        @include zen-clear(right);
+        @include zen-grid-item(4,1,right);
+      }
+      .field-name-body{
+        @include zen-clear();
+        @include zen-grid-item(12,1);
+      }
+      .field-name-field-attention{
+        clear: both !important;
+        @include zen-grid-item(12,1);
+      }
+      .field-name-shop-info2{
+        @include zen-clear();
+        @include zen-grid-item(12,1);
+      }
+      .field-name-field-total-count{
+        @include zen-clear();
+        @include zen-grid-item(12,1);
+      }
+      .field-name-field-per-count-limit{
+        @include zen-clear();
+        @include zen-grid-item(12,1);
+      }
+    }
+    .view-heiankyo-product.view-display-id-page_1{
+      .views-row{
+
+        .views-field-field-product-img{
+          img{
+            width: 50%;
+          /*float: left;*/
+          }
+          
+        }
+      }
+    }
+    .view-commerce-cart-form{
+      #views-form-commerce-cart-form-default{
+        table.views-table{
+          width: 100%;
+
+        }
+      }
+    }
+    #block-views-heiankyo-contact-block-1{
+          @include zen-grid-item(5,2);
+    }
+    #block-webform-client-block-16{
+      @include zen-grid-item(4,8);
+    }
+  }
+  //end of content
+}
+
+$zen-column-count:  12;
+
+@media all and (min-width: 768px) and (max-width: 960px){
+  body{
+   
+     #content{
+      @include zen-grid-item(10.8,2);
+      
+    }
+  }
+   body.normal-content{
+    h1#page-title{
+      display: block;
+      width: zen-grid-item-width(1.5);
+      height: 223px;
+      overflow: hidden;
+      text-indent: -9999px;
+      position: absolute;
+      left: - zen-grid-item-width(0.8);
+      top: 0px;
+      background: url(../images/title-news.png) no-repeat;
+      background-size:100% 100%;
+      width: 46px;
+
+    }
+     #content{
+      @include zen-grid-item(10.8,2);
+      
+    }
+  }
+$zen-column-count:  12;
+  body.node-type-about{
+    h1#page-title{
+      display: block;
+      width:zen-grid-item-width(1.5);
+      height: 317px;
+      overflow: hidden;
+      text-indent: -9999px;
+      position: absolute;
+      left: - zen-grid-item-width(1.2);
+      top: 0px;
+      background: url(../images/title_about.png) no-repeat;
+      background-size:100% 100%;
+      width: 87px;
+
+
+    }
+      #content{
+      @include zen-grid-item(10.8,2);
+     
+    }
+     
+  }
+  $zen-column-count:  12;
+  body.section-contact-us{
+    h1#page-title{
+      display: block;
+      width:zen-grid-item-width(1.5);
+      height: 256px;
+      overflow: hidden;
+      text-indent: -9999px;
+      position: absolute;
+      left: - zen-grid-item-width(1.2);
+      top: 0px;
+      background: url(../images/title_contact.png) no-repeat;
+      background-size:100% 100%;
+      width: 94px;
+
+    }
+    #content{
+      width: 90% !important;
+    }
+  }
+  $zen-column-count: 12;
+  body.section-product{
+    h1#page-title{
+      display: block;
+      width:zen-grid-item-width(1.5);
+      height: 245px;
+      overflow: hidden;
+      text-indent: -9999px;
+      position: absolute;
+      left: - zen-grid-item-width(1.2);
+      top: 0px;
+      background: url(../images/title_product.png) no-repeat;
+      background-size:100% 100%;
+      width: 94px;
+
+    }
+    #content{
+      @include zen-grid-item(10.8,2);
+     
+    }
+  }
+  $zen-column-count: 12;
+  body.section-delivery-service,body.node-type-product-display{
+    h1#page-title{
+      display: block;
+      width: zen-grid-item-width(1);
+      height: 245px;
+      overflow: hidden;
+      text-indent: -9999px;
+      position: absolute;
+      left: - zen-grid-item-width(1.3);
+      top: 0px;
+      background: url(../images/delivery.png) no-repeat;
+      background-size:100% 100%;
+      width: 94px;
+
+    }
+    #content{
+      @include zen-grid-item(10.8,2);
+      
+    }
+  }
+  $zen-column-count:12;
+  body.section-cart{
+    h1#page-title{
+      display: block;
+      width: zen-grid-item-width(1);
+      height: 185px;
+      overflow: hidden;
+      text-indent: -9999px;
+      position: absolute;
+      left: - zen-grid-item-width(1.3);
+      top: 0px;
+      background: url(../images/title_cart.png) no-repeat;
+      background-size:100% 100%;
+      width: 96px;
+    }
+    #content{
+      @include zen-grid-item(10.8,2);
+      
+    }
+  }
+  $zen-column-count:12;
+  body.page-checkout{
+     h1#page-title{
+      color: $main;
+     }
+    #content{
+      @include zen-grid-item(10.8,2);
+    }
+  }
+  $zen-column-count:12;
+  body.front{
+    #block-views-heiankyo-product-block-1{
+      h2.block-title{
+        display: block;
+        width: zen-grid-item-width(1);
+        height: 250px;
+        overflow: hidden;
+        text-indent: -9999px;
+        position: absolute;
+        left: - zen-grid-item-width(1.3);
+        top: -20px;
+        background: url(../images/title_popular.png) no-repeat;
+        background-size:100% 100%;
+        width: 94px;
+
+      }
+    }
+    #block-views-heiankyo-news-activity-block-1{
+      h2.block-title{
+        display: block;
+        width: zen-grid-item-width(1);
+        height: 248px;
+        overflow: hidden;
+        text-indent: -9999px;
+        position: absolute;
+        left: - zen-grid-item-width(1.4);
+        top: -50px;
+        background: url(../images/title_news.png) no-repeat;
+        background-size:100% 100%;
+        width: 94px;
+      }
+    }
+    #content{
+      @include zen-grid-item(10.8,2);
+     
+    }
+  }
+  $zen-column-count:12;
+  body.page-user{
+     h1#page-title{
+      color: $main;
+     }
+    #content{
+      @include zen-grid-item(10.8,2);
+     
+    }
+  }
+#header{
+   
+    position: static !important;
+    padding: 0px !important;
+    .header-wrapper{
+       background:#101010; 
+    }
+    #logo{
+      position: static !important;
+      margin: 20px 0px 20px 20px; 
+      background: url(../images/mobilelogo.png) no-repeat;
+      width: 200px;
+      height: 60px;
+      text-indent: -99999px;
+      overflow: hidden;
+      display: inline-block;
+    }
+    #block-menu-block-1{
+      display: none;
+       position: static !important;
+    }
+    .block-revslider{
+     display: inline-block;
+     margin-bottom: 0px !important;
+    }
+
+  }
+   #slideblock{
+    display: none !important;
+   }
+  #main{
+    
+    #content{
+     
+    }
+    //end of content
+  }
+  //end of main 
+  #contact{
+      #block-revslider-3{
+        .forcefullwidth_wrapper_tp_banner{
+          height: 600px !important;
+          position: static !important;
+      }
+      .fullwidth-container{
+       position: static !important;
+      }
+    }
+  }
+}
+$zen-column-count:  12;
+@media all and (min-width: 480px) and (max-width: 767px){
+  body.normal-content{
+    h1#page-title{
+      display: block;
+      position: relative;
+      left: 50%;
+      top: 0px;
+      margin-left: -43px;
+      background-size:100% 100%;
+    }
+     #content{
+      @include zen-grid-item(12,1);
+      
+    }
+  }
+$zen-column-count:  12;
+  body.node-type-about{
+    h1#page-title{
+      display: block;
+      position: relative;
+      left: 50%;
+      top: 0px;
+      margin-left: -43px;
+      background-size:100% 100%;
+
+    }
+    #content{
+      @include zen-grid-item(12,1);       
+    }     
+  }
+  $zen-column-count:  12;
+  body.section-contact-us{
+    h1#page-title{
+      display: block;      
+      position: relative;
+      left: 50%;
+      top: 0px;
+      margin-left: -47px;
+      background-size:100% 100%;
+    }
+    #content{
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+      width: 100% !important;
+      @include zen-grid-item(12,1);
+      #block-menu-block-2{
+       display: none !important;
+      }
+    }
+  }
+  $zen-column-count: 12;
+  body.section-product{
+    h1#page-title{
+      display: block;
+      position: relative;
+      left: 50%;
+      top: 0px;
+      margin-left: -47px;
+       background-size:100% 100%;
+    }
+    #content{
+      @include zen-grid-item(12,1);
+      
+    }
+  }
+  $zen-column-count: 12;
+  body.section-delivery-service,body.node-type-product-display{
+    h1#page-title{
+      display: block;
+      position: relative;
+      left: 50%;
+      top: 0px;
+      margin-left: -47px;
+      background-size:100% 100%;
+
+    }
+    #content{
+      @include zen-grid-item(12,1);
+     
+    }
+  }
+  $zen-column-count:12;
+  body.section-cart{
+    h1#page-title{
+      display: block;
+      position: relative;
+      left: 50%;
+      top: 0px;
+      margin-left: -47px;
+       background-size:100% 100%;
+    }
+    #content{
+      @include zen-grid-item(12,1);     
+    }
+  }
+  $zen-column-count:12;
+  body.page-checkout{
+     h1#page-title{
+      color: $main;
+     }
+    #content{
+     @include zen-grid-item(12,1);   
+    }
+  }
+  $zen-column-count:12;
+  body.front{
+    #block-views-heiankyo-product-block-1{
+      h2.block-title{
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 0px;
+        margin-left: -47px;
+        background-size:100% 100%;
+        margin-bottom: 40px;
+      }
+    }
+    #block-views-heiankyo-news-activity-block-1{
+      h2.block-title{
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 0px;
+        margin-left: -47px;
+        background-size:100% 100%;
+        margin-bottom: 40px;
+      }
+    }
+    #content{
+      @include zen-grid-item(12,1);
+      
+    }
+  }
+   $zen-column-count:12;
+  body.page-user{
+     h1#page-title{
+      color: $main;
+     }
+    #content{
+     @include zen-grid-item(12,1);   
+    }
+  }
+  #header{
+    position: static !important;
+     padding: 0px !important;
+     .header-wrapper{
+       background:#101010; 
+    }
+    #logo{
+      position: static !important;
+      margin: 20px 0px 20px 20px; 
+      background: url(../images/mobilelogo.png) no-repeat;
+      width: 200px;
+      height: 60px;
+      text-indent: -99999px;
+      overflow: hidden;
+      display: inline-block;
+    }
+    #block-menu-block-1{
+      display: none;
+       position: static !important;
+    }
+    .block-revslider{
+     display: inline-block;
+     margin-bottom: 0px !important;
+    }
+  }
+  h1#page-title{
+    margin-bottom: 40px;
+  }
+  $zen-column-count:12;
+  #main{
+     #content{
+      padding:0px 10px;
+      
+      ul.article-list{
+        li.article-block{
+         @include grid(2,2%);
+        }
+      }
+      #block-menu-block-2{
+        position: absolute;
+        display: block;
+        width: zen-grid-item-width(1.8);
+        top: 0px;
+        right: - zen-grid-item-width(2);
+      }
+      .news-content-area{
+        .field-name-field-image{
+          img{
+            width: zen-grid-item-width(7);
+          }
+        }
+      }
+      
+    }
+    #content{
+      #block-menu-block-2{
+        display: none;
+      }
+      #block-views-heiankyo-product-block-1:before{
+        display: none !important;
+      }
+      #block-views-heiankyo-product-block-1{
+        .view-heiankyo-product{
+          .views-row-1{
+            @include zen-grid-item(6,1);
+          }
+          .views-row-2{
+             @include zen-grid-item(6,1,right);
+          }
+          .views-row-3{
+            display: none;
+          }
+        }
+        .view-footer{
+          text-align: center !important;
+          a.delivery-service{
+            display: inline-block !important;
+          }
+        }
+      }
+       $zen-column-count:13;
+      #block-views-heiankyo-news-activity-block-1{
+        li.views-row{
+          @include grid(2,2%);
+          &:nth-child(3n){
+           display: none !important;
+          }
+          
+        }
+      }
+      #block-views-heiankyo-news-activity-block-1:before{
+        display: none !important;
+      }
+      $zen-column-count: 12;
+      .node-product-display{
+        #block-views-heiankyo-home-delivery-block-1{
+          @include zen-grid-item(12,1);
+        }
+        .field-name-field-product-sort{
+          @include zen-clear();
+          @include zen-grid-item(12,1);
+        }
+        .field-name-sort{
+          @include zen-clear();
+          @include zen-grid-item(12,1);
+        }
+        .field-name-title{
+          @include zen-clear();
+          @include zen-grid-item(12,1);
+        }
+        .field-name-field-japan-name{
+          @include zen-clear();
+          @include zen-grid-item(12,1);
+        }
+        .field-name-commerce-price{
+          @include zen-clear();
+          @include zen-grid-item(12,1);
+        }
+        .field-name-field-product-reference{
+          @include zen-clear();
+          @include zen-grid-item(12,1);
+        }
+        .sharethis-buttons{
+          @include zen-clear();
+          @include zen-grid-item(12,1);
+        }
+        .field-name-field-product-composition{
+          @include zen-clear();
+          @include zen-grid-item(12,1);
+        }
+        .field-name-shop-info{
+          @include zen-clear();
+          @include zen-grid-item(12,1);
+        }
+        .field-name-body{
+          @include zen-clear();
+          @include zen-grid-item(12,1);
+        }
+        .field-name-field-attention{
+          @include zen-clear();
+          @include zen-grid-item(12,1);
+        }
+      }
+      #block-views-heiankyo-contact-block-1{
+          @include zen-grid-item(6,1);
+      }
+      #block-webform-client-block-16{
+        @include zen-grid-item(5,8);
+      }
+
+    }
+    //end of content
+  }
+  //end of main 
+   #contact{
+      #block-revslider-3{
+        .forcefullwidth_wrapper_tp_banner{
+          position: static !important;
+      }
+      .fullwidth-container{
+       position: static !important;
+      }
+    }
+  }
+   #slideblock{
+         display: none;
+      }
+}
+@media all and (max-width: 479px){
+  $zen-column-count:  12;
+   #slideblock{
+    display: none !important;
+   }
+  body.node-type-about{
+    h1#page-title{
+      display: block;
+      width: 87px;
+      height: 317px;
+      position: relative;
+      left: 50%;
+      top: 0px;
+      margin-left: -43px;
+      background:url(../images/title_about.png) no-repeat;
+      text-indent: -99999px;
+      overflow: hidden; 
+    }
+       
+  }
+  body.normal-content{
+    h1#page-title{
+      display: block;
+      width: 87px;
+      height: 317px;
+      position: relative;
+      left: 50%;
+      top: 0px;
+      margin-left: -43px;
+      background:url(../images/title_news.png) no-repeat;
+      text-indent: -99999px;
+      overflow: hidden; 
+    }
+     
+  }
+  body.section-product{
+    h1#page-title{
+      display: block;
+      width: 94px;
+      height: 250px;
+      position: relative;
+      left: 50%;
+      top: 0px;
+      margin-left: -47px;
+      background:url(../images/title_product.png) no-repeat;
+      text-indent: -99999px;
+      overflow: hidden; 
+    }    
+  }
+   body.section-delivery-service,body.node-type-product-display{
+    h1#page-title{
+       display: block;
+      width: 94px;
+      height: 250px;
+      position: relative;
+      left: 50%;
+      top: 0px;
+      margin-left: -47px;
+      background:url(../images/delivery.png) no-repeat;
+      text-indent: -99999px;
+      overflow: hidden; 
+    }  
+  }
+  body.section-contact-us{
+    h1#page-title{
+       display: block;
+      width: 94px;
+      height: 250px;
+      position: relative;
+      left: 50%;
+      top: 0px;
+      margin-left: -47px;
+      background:url(../images/title_contact.png) no-repeat;
+      text-indent: -99999px;
+      overflow: hidden;
+    }   
+  }
+  body.section-cart{
+    h1#page-title{
+      display: block;
+      width: 94px;
+      height: 250px;
+      position: relative;
+      left: 50%;
+      top: 0px;
+      margin-left: -47px;
+      background:url(../images/title_cart.png) no-repeat;
+      text-indent: -99999px;
+      overflow: hidden;
+    }    
+  }
+  body.front{
+    #block-views-heiankyo-product-block-1{
+      h2.block-title{
+        display: block;
+        width: 94px;
+        height: 250px;
+        position: relative;
+        left: 50%;
+        top: 0px;
+        margin-left: -47px;
+        text-indent: -9999px;
+        overflow: hidden;
+        background:url(../images/title_popular.png) no-repeat; 
+        margin-bottom: 40px;
+      }
+    }
+    #block-views-heiankyo-news-activity-block-1{
+      h2.block-title{
+        display: block;
+        width: 94px;
+        height: 250px;
+        position: relative;
+        left: 50%;
+        top: 0px;
+        margin-left: -47px;
+         text-indent: -9999px;
+        overflow: hidden;
+        background:url(../images/title_news.png) no-repeat; 
+       margin-bottom: 40px;
+      }
+    }
+   
+  }
+  #header{
+    position: static !important;
+     padding: 0px !important;
+     .header-wrapper{
+       background:#101010; 
+    }
+    #logo{
+       position: static !important;
+      margin: 20px 0px 20px 20px; 
+      background: url(../images/mobilelogo.png) no-repeat;
+      width: 200px;
+      height: 60px;
+      text-indent: -99999px;
+      overflow: hidden;
+      display: inline-block;
+    }
+    #block-menu-block-1{
+      display: none;
+       position: static !important;
+    }
+    .block-revslider{
+     display: inline-block;
+     margin-bottom: 0px !important;
+    }
+  }
+  h1#page-title{
+    margin-bottom: 40px;
+  }
+  $zen-column-count:12;
+  #main{
+    min-height: 0px !important;
+    #content{
+      padding-top:0px !important; 
+      #slideblock{
+        display: none;
+      }
+      #block-views-heiankyo-product-block-1:before{
+        display: none !important;
+      }
+      #block-views-heiankyo-product-block-1{
+
+        .view-heiankyo-product{
+          .views-row-1{
+            @include zen-grid-item(6,1);
+          }
+          .views-row-2{
+             @include zen-grid-item(6,1,right);
+          }
+          .views-row-3{
+            display: none;
+          }
+        }
+        .view-footer{
+          @include zen-clear();
+          margin-bottom: 40px;
+          text-align: center !important;
+          a.delivery-service{
+            display: inline-block !important;
+          }
+        }
+      }
+       $zen-column-count:13;
+      #block-views-heiankyo-news-activity-block-1{
+        li.views-row{
+         @include grid(2,2%);
+          &:nth-child(3n){
+           display: none !important;
+          }
+          
+        }
+      }
+      #block-views-heiankyo-news-activity-block-1:before{
+        display: none !important;
+      }
+      .view-heiankyo-product.view-display-id-page_1{
+        .views-row{
+          .views-field-field-product-img{
+            img{
+              width: 50%;
+            float: left;
+            }            
+          }
+        }
+      }
+      .node-product-display{
+        .field-name-shop-info {
+          display: block !important;
+        }
+        .field-name-field-attention {
+           p{
+            margin: 0px;
+          }
+        }
+        .field-name-shop-info2{
+          
+          p{
+            padding-bottom: 10px;
+            margin: 0px;
+            a{
+              display: inline-block;
+            }
+          }
+        }
+      }
+      $zen-column-count: 12;
+      .view-heiankyo-home-delivery{
+        li.views-row{
+          .views-field-title{
+            @include zen-grid-item(8,1);
+          }
+          .views-field-commerce-price{
+            @include zen-clear(right);
+            @include zen-grid-item(4,1,right);
+          }
+        }
+      }
+    }
+    //end of content
+  }
+  //end of main 
+  #contact{
+      #block-revslider-3{
+        .forcefullwidth_wrapper_tp_banner{
+          height: 600px !important;
+          position: static !important;
+      }
+      .fullwidth-container{
+       position: static !important;
+      }
+    }
+    #block-webform-client-block-10{
+      width: 100% !important;
+      left: 0px !important;
+      margin-top:10px !important;
+      margin-left: 0px !important; 
+      padding-right: 0px !important;
+      background-size:  26px 138px !important;
+      padding-top: 150px !important;
+      background-position: top center !important;
+      #webform-client-form-10{
+        padding: 0 20px;
+      }
+
+    }
+  }
+}
