@@ -3231,7 +3231,7 @@ tr.selected td {
 /* line 803, ../sass/components/_misc.scss */
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1451896960');
+  background-image: url('../images/progress.gif?1451962527');
 }
 
 /**
@@ -4417,16 +4417,46 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
 #main #content .news-content-area .field-name-field-class-reference {
   margin: 10px 0;
 }
-/* line 953, ../sass/styles.scss */
+/* line 952, ../sass/styles.scss */
+#main #content .news-content-area .field-name-commerce-price {
+  text-align: center;
+  margin: 10px 0px;
+}
+/* line 955, ../sass/styles.scss */
+#main #content .news-content-area .field-name-commerce-price .field-item:after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #b9b209;
+  margin: 0 auto;
+}
+/* line 964, ../sass/styles.scss */
+#main #content .news-content-area .field-name-field-remark {
+  text-align: center;
+}
+/* line 967, ../sass/styles.scss */
+#main #content .news-content-area .field-type-commerce-product-reference {
+  text-align: center;
+}
+/* line 969, ../sass/styles.scss */
+#main #content .news-content-area .field-type-commerce-product-reference .form-type-textfield {
+  text-align: center;
+}
+/* line 971, ../sass/styles.scss */
+#main #content .news-content-area .field-type-commerce-product-reference .form-type-textfield label {
+  display: none;
+}
+/* line 979, ../sass/styles.scss */
 #main #content .sharethis-buttons {
   margin-top: 10px;
   text-align: center;
 }
-/* line 956, ../sass/styles.scss */
+/* line 982, ../sass/styles.scss */
 #main #content .sharethis-buttons .stButton {
   width: auto !important;
 }
-/* line 959, ../sass/styles.scss */
+/* line 985, ../sass/styles.scss */
 #main #content .sharethis-buttons .stButton .chicklets {
   margin-right: 20px;
   padding-right: 0px;
@@ -4436,40 +4466,40 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   -o-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
 }
-/* line 968, ../sass/styles.scss */
+/* line 994, ../sass/styles.scss */
 #main #content .sharethis-buttons .chicklets.twitter {
   background: url(../images/icon_t.jpg) no-repeat;
   width: 23px;
   height: 24px;
   padding-left: 24px;
 }
-/* line 973, ../sass/styles.scss */
+/* line 999, ../sass/styles.scss */
 #main #content .sharethis-buttons .chicklets.twitter:hover {
   background: url(../images/icon_t_h.jpg) no-repeat;
 }
-/* line 977, ../sass/styles.scss */
+/* line 1003, ../sass/styles.scss */
 #main #content .sharethis-buttons .chicklets.facebook {
   background: url(../images/icon_f.jpg) no-repeat;
   width: 16px;
   height: 24px;
   padding-left: 20px;
 }
-/* line 982, ../sass/styles.scss */
+/* line 1008, ../sass/styles.scss */
 #main #content .sharethis-buttons .chicklets.facebook:hover {
   background: url(../images/icon_f_h.jpg) no-repeat;
 }
-/* line 986, ../sass/styles.scss */
+/* line 1012, ../sass/styles.scss */
 #main #content .sharethis-buttons .chicklets.googleplus {
   background: url(../images/icon_g.jpg) no-repeat;
   width: 25px;
   height: 24px;
   padding-left: 15px;
 }
-/* line 991, ../sass/styles.scss */
+/* line 1017, ../sass/styles.scss */
 #main #content .sharethis-buttons .chicklets.googleplus:hover {
   background: url(../images/icon_g_h.jpg) no-repeat;
 }
-/* line 995, ../sass/styles.scss */
+/* line 1021, ../sass/styles.scss */
 #main #content .sharethis-buttons .chicklets.pinterest {
   background: url(../images/icon_p.jpg) no-repeat;
   width: 22px;
@@ -4477,33 +4507,33 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   border: 0px !important;
   padding-left: 0px !important;
 }
-/* line 1001, ../sass/styles.scss */
+/* line 1027, ../sass/styles.scss */
 #main #content .sharethis-buttons .chicklets.pinterest:hover {
   background: url(../images/icon_p_h.jpg) no-repeat;
 }
-/* line 1006, ../sass/styles.scss */
+/* line 1032, ../sass/styles.scss */
 #main #content #block-views-heiankyo-contact-block-1 {
   margin-top: 20px;
 }
-/* line 1008, ../sass/styles.scss */
+/* line 1034, ../sass/styles.scss */
 #main #content #block-views-heiankyo-contact-block-1 .views-field-title {
   font-size: 24px;
   margin-bottom: 10px;
 }
-/* line 1012, ../sass/styles.scss */
+/* line 1038, ../sass/styles.scss */
 #main #content #block-views-heiankyo-contact-block-1 .views-field-field-eng-title {
   font-size: 16px;
   margin-bottom: 10px;
 }
-/* line 1017, ../sass/styles.scss */
+/* line 1043, ../sass/styles.scss */
 #main #content #block-views-heiankyo-contact-block-1 .views-field-body p {
   margin: 5px 0px;
 }
-/* line 1020, ../sass/styles.scss */
+/* line 1046, ../sass/styles.scss */
 #main #content #block-views-heiankyo-contact-block-1 .views-field-body a {
   color: #898989;
 }
-/* line 1026, ../sass/styles.scss */
+/* line 1052, ../sass/styles.scss */
 #main #content #block-views-heiankyo-contact-block-1 .views-field-nothing .comments a {
   border: 2px solid #b9b209;
   background: transparent;
@@ -4511,42 +4541,42 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   border-radius: 5px;
   cursor: pointer;
 }
-/* line 1036, ../sass/styles.scss */
+/* line 1062, ../sass/styles.scss */
 #main #content #block-webform-client-block-16 {
   display: none;
 }
-/* line 1038, ../sass/styles.scss */
+/* line 1064, ../sass/styles.scss */
 #main #content #block-webform-client-block-16 h2.block-title {
   display: none;
 }
-/* line 1041, ../sass/styles.scss */
+/* line 1067, ../sass/styles.scss */
 #main #content #block-webform-client-block-16 .form-item {
   margin: 10px 0px;
 }
-/* line 1044, ../sass/styles.scss */
+/* line 1070, ../sass/styles.scss */
 #main #content #block-webform-client-block-16 input {
   border: 1px solid #b9b209;
   padding: 10px;
   border-radius: 5px;
 }
-/* line 1049, ../sass/styles.scss */
+/* line 1075, ../sass/styles.scss */
 #main #content #block-webform-client-block-16 textarea {
   border: 1px solid #b9b209;
   padding: 10px;
   border-radius: 5px;
 }
-/* line 1054, ../sass/styles.scss */
+/* line 1080, ../sass/styles.scss */
 #main #content #block-webform-client-block-16 .form-actions {
   text-align: right;
 }
-/* line 1056, ../sass/styles.scss */
+/* line 1082, ../sass/styles.scss */
 #main #content #block-webform-client-block-16 .form-actions input {
   border: 2px solid #b9b209;
   background: transparent;
   padding: 10px 20px;
   color: #b9b209;
 }
-/* line 1065, ../sass/styles.scss */
+/* line 1091, ../sass/styles.scss */
 #main #content .view-heiankyo-home-slide #flexslider-1 {
   background: transparent;
   border: 0px;
@@ -4554,35 +4584,35 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   box-shadow: none;
   margin: 0px;
 }
-/* line 1071, ../sass/styles.scss */
+/* line 1097, ../sass/styles.scss */
 #main #content .view-heiankyo-home-slide #flexslider-1 ul.flex-direction-nav a {
   overflow: visible;
   height: 100px;
   display: block;
 }
-/* line 1076, ../sass/styles.scss */
+/* line 1102, ../sass/styles.scss */
 #main #content .view-heiankyo-home-slide #flexslider-1 ol.flex-control-nav {
   position: relative;
   bottom: 30px;
   z-index: 30;
   text-align: right;
 }
-/* line 1082, ../sass/styles.scss */
+/* line 1108, ../sass/styles.scss */
 #main #content .view-heiankyo-home-slide #flexslider-1 ol.flex-control-nav li a {
   color: transparent;
   text-indent: -9999px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.4);
 }
-/* line 1087, ../sass/styles.scss */
+/* line 1113, ../sass/styles.scss */
 #main #content .view-heiankyo-home-slide #flexslider-1 ol.flex-control-nav li a:hover {
   background: rgba(255, 255, 255, 0.9);
 }
-/* line 1091, ../sass/styles.scss */
+/* line 1117, ../sass/styles.scss */
 #main #content .view-heiankyo-home-slide #flexslider-1 ol.flex-control-nav li a.flex-active {
   background: rgba(255, 255, 255, 0.9);
 }
-/* line 1099, ../sass/styles.scss */
+/* line 1125, ../sass/styles.scss */
 #main #content .view-heiankyo-home-delivery ul {
   margin: 0px;
   padding: 0px;
@@ -4593,7 +4623,7 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 1108, ../sass/styles.scss */
+/* line 1134, ../sass/styles.scss */
 #main #content .view-heiankyo-home-delivery ul li.views-row {
   position: relative;
   list-style-type: none;
@@ -4603,25 +4633,25 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   display: flex;
   margin-bottom: 30px;
 }
-/* line 1116, ../sass/styles.scss */
+/* line 1142, ../sass/styles.scss */
 #main #content .view-heiankyo-home-delivery ul li.views-row .list-wrapper {
   position: relative;
   padding-bottom: 40px;
 }
-/* line 1120, ../sass/styles.scss */
+/* line 1146, ../sass/styles.scss */
 #main #content .view-heiankyo-home-delivery ul li.views-row .list-wrapper .views-field-field-product-jmg img {
   width: 100%;
 }
-/* line 1125, ../sass/styles.scss */
+/* line 1151, ../sass/styles.scss */
 #main #content .view-heiankyo-home-delivery ul li.views-row .list-wrapper .views-field-title a {
   color: #898989;
   font-weight: bold;
 }
-/* line 1130, ../sass/styles.scss */
+/* line 1156, ../sass/styles.scss */
 #main #content .view-heiankyo-home-delivery ul li.views-row .list-wrapper .views-field-commerce-price {
   text-align: right;
 }
-/* line 1137, ../sass/styles.scss */
+/* line 1163, ../sass/styles.scss */
 #main #content #block-views-heiankyo-news-activity-block-1:before {
   content: "";
   width: 80px;
@@ -4630,7 +4660,7 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   display: block;
   margin-bottom: 10px;
 }
-/* line 1147, ../sass/styles.scss */
+/* line 1173, ../sass/styles.scss */
 #main #content #block-views-heiankyo-news-activity-block-1 .view-heiankyo-news-activity ul {
   margin: 0px;
   padding: 0px;
@@ -4641,7 +4671,7 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 1156, ../sass/styles.scss */
+/* line 1182, ../sass/styles.scss */
 #main #content #block-views-heiankyo-news-activity-block-1 .view-heiankyo-news-activity ul li.views-row {
   position: relative;
   list-style-type: none;
@@ -4651,16 +4681,16 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   display: flex;
   margin-bottom: 20px;
 }
-/* line 1164, ../sass/styles.scss */
+/* line 1190, ../sass/styles.scss */
 #main #content #block-views-heiankyo-news-activity-block-1 .view-heiankyo-news-activity ul li.views-row .list-wrapper {
   position: relative;
   padding-bottom: 20px;
 }
-/* line 1168, ../sass/styles.scss */
+/* line 1194, ../sass/styles.scss */
 #main #content #block-views-heiankyo-news-activity-block-1 .view-heiankyo-news-activity ul li.views-row .list-wrapper .views-field-field-image img {
   width: 100%;
 }
-/* line 1179, ../sass/styles.scss */
+/* line 1206, ../sass/styles.scss */
 #main #content .node-product-display #block-views-heiankyo-home-delivery-block-1 #views_slideshow_cycle_main_heiankyo_home_delivery-block_1 {
   position: relative;
   width: 100%;
@@ -4669,23 +4699,23 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   overflow: hidden;
   margin-bottom: 10px;
 }
-/* line 1186, ../sass/styles.scss */
+/* line 1213, ../sass/styles.scss */
 #main #content .node-product-display #block-views-heiankyo-home-delivery-block-1 #views_slideshow_cycle_main_heiankyo_home_delivery-block_1 img {
   width: 100%;
 }
-/* line 1191, ../sass/styles.scss */
+/* line 1218, ../sass/styles.scss */
 #main #content .node-product-display #block-views-heiankyo-home-delivery-block-1 #views_slideshow_cycle_main_heiankyo_home_delivery-block_1 .views-slideshow-cycle-main-frame,
 #main #content .node-product-display #block-views-heiankyo-home-delivery-block-1 #views_slideshow_cycle_main_heiankyo_home_delivery-block_1 .views-slideshow-cycle-main-frame-row,
 #main #content .node-product-display #block-views-heiankyo-home-delivery-block-1 #views_slideshow_cycle_main_heiankyo_home_delivery-block_1 .views-slideshow-cycle-main-frame-row img {
   width: 100% !important;
   height: auto;
 }
-/* line 1195, ../sass/styles.scss */
+/* line 1222, ../sass/styles.scss */
 #main #content .node-product-display #block-views-heiankyo-home-delivery-block-1 #views_slideshow_cycle_main_heiankyo_home_delivery-block_1 .field-content {
   max-width: 100%;
   width: 100%;
 }
-/* line 1199, ../sass/styles.scss */
+/* line 1226, ../sass/styles.scss */
 #main #content .node-product-display #block-views-heiankyo-home-delivery-block-1 #views_slideshow_cycle_main_heiankyo_home_delivery-block_1 .field-content img {
   max-width: 100%;
   width: 100%;
@@ -4693,53 +4723,53 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   margin: 0;
   padding: 0;
 }
-/* line 1207, ../sass/styles.scss */
+/* line 1234, ../sass/styles.scss */
 #main #content .node-product-display #block-views-heiankyo-home-delivery-block-1 .views-slideshow-controls-bottom {
   text-align: center;
 }
-/* line 1209, ../sass/styles.scss */
+/* line 1236, ../sass/styles.scss */
 #main #content .node-product-display #block-views-heiankyo-home-delivery-block-1 .views-slideshow-controls-bottom .views-slideshow-pager-field-item {
   display: inline-block;
   cursor: pointer;
 }
-/* line 1215, ../sass/styles.scss */
+/* line 1242, ../sass/styles.scss */
 #main #content .node-product-display .field-name-field-product-sort {
   text-align: center;
 }
-/* line 1217, ../sass/styles.scss */
+/* line 1244, ../sass/styles.scss */
 #main #content .node-product-display .field-name-field-product-sort .field-item {
   color: #fff;
   display: inline-block;
   background: #b9b209;
   padding: 2px 10px;
 }
-/* line 1224, ../sass/styles.scss */
+/* line 1251, ../sass/styles.scss */
 #main #content .node-product-display .field-name-sort {
   text-align: center;
 }
-/* line 1226, ../sass/styles.scss */
+/* line 1253, ../sass/styles.scss */
 #main #content .node-product-display .field-name-sort span {
   background: #b9b209;
   padding: 2px 5px;
 }
-/* line 1231, ../sass/styles.scss */
+/* line 1258, ../sass/styles.scss */
 #main #content .node-product-display .field-name-title {
   text-align: center;
 }
-/* line 1233, ../sass/styles.scss */
+/* line 1260, ../sass/styles.scss */
 #main #content .node-product-display .field-name-title h2 {
   margin: 0px;
 }
-/* line 1237, ../sass/styles.scss */
+/* line 1264, ../sass/styles.scss */
 #main #content .node-product-display .field-name-field-japan-name {
   text-align: center;
   font-size: 18px;
 }
-/* line 1241, ../sass/styles.scss */
+/* line 1268, ../sass/styles.scss */
 #main #content .node-product-display .field-name-commerce-price {
   text-align: center;
 }
-/* line 1243, ../sass/styles.scss */
+/* line 1270, ../sass/styles.scss */
 #main #content .node-product-display .field-name-commerce-price .field-item:after {
   content: "";
   display: block;
@@ -4748,24 +4778,24 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   background: #b9b209;
   margin: 0 auto;
 }
-/* line 1252, ../sass/styles.scss */
+/* line 1279, ../sass/styles.scss */
 #main #content .node-product-display .field-name-field-product-reference {
   text-align: center;
   margin-top: 10px;
 }
-/* line 1256, ../sass/styles.scss */
+/* line 1283, ../sass/styles.scss */
 #main #content .node-product-display .field-name-field-product-reference .form-type-textfield.form-item-quantity {
   margin: 10px 0;
 }
-/* line 1258, ../sass/styles.scss */
+/* line 1285, ../sass/styles.scss */
 #main #content .node-product-display .field-name-field-product-reference .form-type-textfield.form-item-quantity label {
   display: none;
 }
-/* line 1261, ../sass/styles.scss */
+/* line 1288, ../sass/styles.scss */
 #main #content .node-product-display .field-name-field-product-reference .form-type-textfield.form-item-quantity input {
   text-align: center;
 }
-/* line 1266, ../sass/styles.scss */
+/* line 1293, ../sass/styles.scss */
 #main #content .node-product-display .field-name-field-product-reference .commerce-quantity-plusminus-link a {
   color: #898989;
   background: #ccc;
@@ -4775,15 +4805,15 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   appearance: none;
   -webkit-appearance: none;
 }
-/* line 1276, ../sass/styles.scss */
+/* line 1303, ../sass/styles.scss */
 #main #content .node-product-display .field-name-field-product-reference .commerce-quantity-plusminus-link-decrease {
   margin-right: 5px;
 }
-/* line 1279, ../sass/styles.scss */
+/* line 1306, ../sass/styles.scss */
 #main #content .node-product-display .field-name-field-product-reference .commerce-quantity-plusminus-link-increase {
   margin-left: 5px;
 }
-/* line 1282, ../sass/styles.scss */
+/* line 1309, ../sass/styles.scss */
 #main #content .node-product-display .field-name-field-product-reference input#edit-submit {
   background: #b9b209;
   color: #fff;
@@ -4792,34 +4822,34 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   padding: 2px 10px;
   margin-right: 0px;
 }
-/* line 1291, ../sass/styles.scss */
+/* line 1318, ../sass/styles.scss */
 #main #content .node-product-display .field-name-field-product-composition {
   text-align: center;
 }
-/* line 1294, ../sass/styles.scss */
+/* line 1321, ../sass/styles.scss */
 #main #content .node-product-display .field-name-shop-info {
   display: inline-block;
   text-align: center;
 }
-/* line 1297, ../sass/styles.scss */
+/* line 1324, ../sass/styles.scss */
 #main #content .node-product-display .field-name-shop-info p {
   margin: 0px;
 }
-/* line 1301, ../sass/styles.scss */
+/* line 1328, ../sass/styles.scss */
 #main #content .node-product-display .field-name-body {
   text-align: center;
 }
-/* line 1304, ../sass/styles.scss */
+/* line 1331, ../sass/styles.scss */
 #main #content .node-product-display .field-name-field-attention {
   background: #ddd;
   text-align: center;
 }
-/* line 1308, ../sass/styles.scss */
+/* line 1335, ../sass/styles.scss */
 #main #content .node-product-display .field-name-shop-info2 {
   text-align: center;
   background: #ddd;
 }
-/* line 1311, ../sass/styles.scss */
+/* line 1338, ../sass/styles.scss */
 #main #content .node-product-display .field-name-shop-info2 a {
   color: #fff;
   border: 2px solid #fff;
@@ -4827,11 +4857,11 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   padding: 5px 10px;
   background: #101010;
 }
-/* line 1317, ../sass/styles.scss */
+/* line 1344, ../sass/styles.scss */
 #main #content .node-product-display .field-name-shop-info2 a:hover {
   color: #b9b209;
 }
-/* line 1324, ../sass/styles.scss */
+/* line 1351, ../sass/styles.scss */
 #main #content .view-heiankyo-product.view-display-id-page_1 .views-row {
   -webkit-animation: fadein 2s;
   /* Safari, Chrome and Opera > 12.1 */
@@ -4848,125 +4878,141 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   display: inline-block;
   margin-bottom: 80px;
 }
-/* line 1339, ../sass/styles.scss */
+/* line 1366, ../sass/styles.scss */
 #main #content .view-heiankyo-product.view-display-id-page_1 .views-row .views-field-title {
   font-size: 36px;
   font-weight: bold;
   margin: 20px 0px;
 }
-/* line 1344, ../sass/styles.scss */
+/* line 1371, ../sass/styles.scss */
 #main #content .view-heiankyo-product.view-display-id-page_1 .views-row .views-field-field-japan-name {
   font-size: 24px;
   margin: 20px 0px;
 }
-/* line 1348, ../sass/styles.scss */
+/* line 1375, ../sass/styles.scss */
 #main #content .view-heiankyo-product.view-display-id-page_1 .views-row .views-field-field-sub-tilte {
   font-size: 24px;
   font-weight: bold;
   margin: 20px 0px;
 }
-/* line 1353, ../sass/styles.scss */
+/* line 1380, ../sass/styles.scss */
 #main #content .view-heiankyo-product.view-display-id-page_1 .views-row .views-field-field-online-shop {
   margin-bottom: 20px;
 }
-/* line 1355, ../sass/styles.scss */
+/* line 1382, ../sass/styles.scss */
 #main #content .view-heiankyo-product.view-display-id-page_1 .views-row .views-field-field-online-shop a {
   display: inline-block;
   border: 1px #b9b209 solid;
   padding: 2px 10px;
 }
-/* line 1362, ../sass/styles.scss */
+/* line 1389, ../sass/styles.scss */
 #main #content .view-heiankyo-product.view-display-id-page_1 .views-row .views-field-body p {
   margin: 5px 0px;
 }
-/* line 1369, ../sass/styles.scss */
+/* line 1396, ../sass/styles.scss */
 #main #content #node-30 {
   background: #ddd;
   padding: 10px 20px;
 }
-/* line 1377, ../sass/styles.scss */
+/* line 1404, ../sass/styles.scss */
 #main #content .view-commerce-cart-form #views-form-commerce-cart-form-default table thead tr {
   background: transparent;
   border-top: 1px solid #b9b209;
   border-bottom: 1px solid #b9b209;
 }
-/* line 1381, ../sass/styles.scss */
+/* line 1408, ../sass/styles.scss */
 #main #content .view-commerce-cart-form #views-form-commerce-cart-form-default table thead tr th {
   color: #898989;
   border: 0px;
 }
-/* line 1387, ../sass/styles.scss */
+/* line 1414, ../sass/styles.scss */
 #main #content .view-commerce-cart-form #views-form-commerce-cart-form-default table tbody {
   border: 0px;
 }
-/* line 1389, ../sass/styles.scss */
+/* line 1416, ../sass/styles.scss */
 #main #content .view-commerce-cart-form #views-form-commerce-cart-form-default table tbody tr {
   border-top: 0px;
   border-right: 0px;
   border-left: 0px;
   border-bottom: 1px solid #b9b209;
 }
-/* line 1394, ../sass/styles.scss */
+/* line 1421, ../sass/styles.scss */
 #main #content .view-commerce-cart-form #views-form-commerce-cart-form-default table tbody tr td {
   padding: 10px 0;
 }
-/* line 1398, ../sass/styles.scss */
+/* line 1425, ../sass/styles.scss */
 #main #content .view-commerce-cart-form #views-form-commerce-cart-form-default table tbody tr .views-field-field-product-jmg a {
   float: left;
   display: inline-block;
   width: 100%;
 }
-/* line 1402, ../sass/styles.scss */
+/* line 1429, ../sass/styles.scss */
 #main #content .view-commerce-cart-form #views-form-commerce-cart-form-default table tbody tr .views-field-field-product-jmg a img {
   float: right;
   width: 100%;
 }
-/* line 1408, ../sass/styles.scss */
+/* line 1435, ../sass/styles.scss */
 #main #content .view-commerce-cart-form #views-form-commerce-cart-form-default table tbody tr .views-field-line-item-title {
   font-size: 18px;
 }
-/* line 1410, ../sass/styles.scss */
+/* line 1437, ../sass/styles.scss */
 #main #content .view-commerce-cart-form #views-form-commerce-cart-form-default table tbody tr .views-field-line-item-title a {
   color: #898989;
   font-weight: bold;
 }
-/* line 1418, ../sass/styles.scss */
+/* line 1445, ../sass/styles.scss */
 #main #content .view-commerce-cart-form #views-form-commerce-cart-form-default .line-item-total {
   border-bottom: 1px solid #b9b209;
   padding-bottom: 20px;
 }
-/* line 1421, ../sass/styles.scss */
+/* line 1448, ../sass/styles.scss */
 #main #content .view-commerce-cart-form #views-form-commerce-cart-form-default .line-item-total .line-item-total-label {
   font-size: 18px;
   font-weight: normal;
 }
-/* line 1428, ../sass/styles.scss */
+/* line 1455, ../sass/styles.scss */
 #main #content ul.pager {
   display: block !important;
   text-align: center;
 }
+/* line 1464, ../sass/styles.scss */
+#main #content #commerce-checkout-form-review table.checkout-review tbody tr td.pane-data-full {
+  text-align: left;
+}
+/* line 1468, ../sass/styles.scss */
+#main #content #commerce-checkout-form-review table.checkout-review tbody tr td.pane-data-full .form-item label {
+  display: inline-block;
+}
+/* line 1472, ../sass/styles.scss */
+#main #content #commerce-checkout-form-review table.checkout-review tbody tr td.pane-data-full .field-label {
+  display: inline-block;
+}
+/* line 1475, ../sass/styles.scss */
+#main #content #commerce-checkout-form-review table.checkout-review tbody tr td.pane-data-full .field-items {
+  display: inline-block;
+}
 
-/* line 1441, ../sass/styles.scss */
+/* line 1492, ../sass/styles.scss */
 #map #block-views-heiankyo-contact-block-2 {
   margin-bottom: 0px;
 }
-/* line 1444, ../sass/styles.scss */
+/* line 1495, ../sass/styles.scss */
 #map #block-views-heiankyo-contact-block-2 .views-field-field-address-map iframe {
   width: 100%;
   pointer-events: none;
 }
-/* line 1448, ../sass/styles.scss */
+/* line 1499, ../sass/styles.scss */
 #map #block-views-heiankyo-contact-block-2 .views-field-field-address-map img {
   width: 100%;
 }
 
-/* line 1455, ../sass/styles.scss */
+/* line 1506, ../sass/styles.scss */
 #contact {
   clear: both;
   position: relative;
   margin-top: 30px;
 }
-/* line 1459, ../sass/styles.scss */
+/* line 1510, ../sass/styles.scss */
 #contact #block-webform-client-block-10 {
   width: 300px;
   position: absolute;
@@ -4981,28 +5027,28 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   z-index: 20;
   font-size: 16px;
 }
-/* line 1472, ../sass/styles.scss */
+/* line 1523, ../sass/styles.scss */
 #contact #block-webform-client-block-10 .form-item {
   margin-top: 0px;
   margin-bottom: 10px;
 }
-/* line 1476, ../sass/styles.scss */
+/* line 1527, ../sass/styles.scss */
 #contact #block-webform-client-block-10 select#edit-submitted-date-month {
   width: 50%;
 }
-/* line 1479, ../sass/styles.scss */
+/* line 1530, ../sass/styles.scss */
 #contact #block-webform-client-block-10 select#edit-submitted-date-day {
   width: 30%;
 }
-/* line 1482, ../sass/styles.scss */
+/* line 1533, ../sass/styles.scss */
 #contact #block-webform-client-block-10 input#dp1441782309162 {
   width: 10%;
 }
-/* line 1485, ../sass/styles.scss */
+/* line 1536, ../sass/styles.scss */
 #contact #block-webform-client-block-10 select#edit-submitted-number-people {
   width: 100%;
 }
-/* line 1488, ../sass/styles.scss */
+/* line 1539, ../sass/styles.scss */
 #contact #block-webform-client-block-10 select {
   border-radius: 5px;
   padding: 5px 8px;
@@ -5013,11 +5059,11 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   background: url(../images/arrow.png) no-repeat right white;
   background-position: right 10px center;
 }
-/* line 1498, ../sass/styles.scss */
+/* line 1549, ../sass/styles.scss */
 #contact #block-webform-client-block-10 .description {
   color: #b9b209;
 }
-/* line 1501, ../sass/styles.scss */
+/* line 1552, ../sass/styles.scss */
 #contact #block-webform-client-block-10 input[type='text'] {
   padding-left: 10px;
   border-radius: 5px;
@@ -5026,11 +5072,11 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   line-height: 32px;
   height: 32px;
 }
-/* line 1509, ../sass/styles.scss */
+/* line 1560, ../sass/styles.scss */
 #contact #block-webform-client-block-10 .form-actions {
   text-align: right;
 }
-/* line 1511, ../sass/styles.scss */
+/* line 1562, ../sass/styles.scss */
 #contact #block-webform-client-block-10 .form-actions input[type="submit"] {
   background: #000;
   color: #FFF;
@@ -5038,7 +5084,7 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   border-radius: 5px;
   padding: 5px 20px;
 }
-/* line 1519, ../sass/styles.scss */
+/* line 1570, ../sass/styles.scss */
 #contact #block-webform-client-block-10 .form-textarea {
   padding-left: 10px;
   border-radius: 5px;
@@ -5048,22 +5094,22 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   height: 100px;
 }
 
-/* line 1530, ../sass/styles.scss */
+/* line 1581, ../sass/styles.scss */
 #footer {
   font-size: 14px;
   color: #898989;
 }
-/* line 1533, ../sass/styles.scss */
+/* line 1584, ../sass/styles.scss */
 #footer p {
   margin: 0px;
 }
-/* line 1536, ../sass/styles.scss */
+/* line 1587, ../sass/styles.scss */
 #footer a {
   text-decoration: none;
   color: #b9b209;
 }
 
-/* line 1542, ../sass/styles.scss */
+/* line 1593, ../sass/styles.scss */
 .region-bottom {
   border-top: 1px #898989 solid;
   color: #898989;
@@ -5071,7 +5117,7 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   text-align: center;
   font-size: 12px;
 }
-/* line 1548, ../sass/styles.scss */
+/* line 1599, ../sass/styles.scss */
 .region-bottom a {
   color: #898989;
   text-decoration: none;
@@ -5080,28 +5126,28 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   -o-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
 }
-/* line 1555, ../sass/styles.scss */
+/* line 1606, ../sass/styles.scss */
 .region-bottom a:hover {
   color: #b9b209;
 }
-/* line 1559, ../sass/styles.scss */
+/* line 1610, ../sass/styles.scss */
 .region-bottom p {
   margin: 0px;
 }
-/* line 1562, ../sass/styles.scss */
+/* line 1613, ../sass/styles.scss */
 .region-bottom .block {
   margin-bottom: 0px;
 }
 
-/* line 1568, ../sass/styles.scss */
+/* line 1619, ../sass/styles.scss */
 #modalContent .popups-container {
   border: 2px solid #b9b209;
 }
-/* line 1571, ../sass/styles.scss */
+/* line 1622, ../sass/styles.scss */
 #modalContent .popups-container .modal-header.popups-title #modal-title {
   color: #b9b209;
 }
-/* line 1575, ../sass/styles.scss */
+/* line 1626, ../sass/styles.scss */
 #modalContent .popups-container input[type="submit"] {
   background: #b9b209;
   color: #FFF;
@@ -5110,14 +5156,14 @@ body.section-product #content .view-filters #views-exposed-form-heiankyo-product
   border: 0px;
 }
 
-/* line 1585, ../sass/styles.scss */
+/* line 1636, ../sass/styles.scss */
 .on {
   display: block !important;
   opacity: 1 !important;
   top: 25px !important;
 }
 
-/* line 1590, ../sass/styles.scss */
+/* line 1641, ../sass/styles.scss */
 .off {
   display: none !important;
   opacity: 0 !important;

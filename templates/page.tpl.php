@@ -7,6 +7,8 @@
  * @see https://drupal.org/node/1728148
  */
 ?>
+
+
 <div id='loading'>
 <div class="spinner"></div>
 </div>
@@ -64,6 +66,7 @@
   
 
 <div id="page">
+<div id="particles-js"></div>
     <div id="main">
 
     <div id="content" class="column" role="main">
