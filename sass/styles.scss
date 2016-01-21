@@ -495,7 +495,7 @@ body.section-product {
     }
 }
 #block-menu-block-2{
-    z-index: 999;
+    z-index: 99;
 }
 #block-menu-block-2,
 #block-menu-block-4,
@@ -715,7 +715,16 @@ body.section-product {
         }
         .views-field-edit-quantity {
             span.commerce-quantity-plusminus-link {
-                display: none;
+               margin:0 5px; 
+                a {
+                    color: $textcolor;
+                    background: #ccc;
+                    border-radius: 3px;
+                    border: 1px solid $textcolor;
+                    padding: 1.5px 7px !important;
+                    appearance: none;
+                    -webkit-appearance: none;
+                }
             }
         }
     }
@@ -972,9 +981,36 @@ body.section-product {
                         display: none;
                     }
                 }
+                .form-type-textarea{
+                    text-align: center;
+                    .form-textarea-wrapper{
+                        width: 50%;
+                        display: inline-block;
+                    }
+                }
+                .form-type-textfield{
+                    .commerce-quantity-plusminus-link {
+                        margin:0 5px; 
+                        a {
+                            color: $textcolor;
+                            background: #ccc;
+                            border-radius: 3px;
+                            border: 1px solid $textcolor;
+                            padding: 1.5px 7px !important;
+                            appearance: none;
+                            -webkit-appearance: none;
+                        }
+                    }
+                    input#edit-quantity{
+                        text-align: center;
+                    }
+                }
             }
             
-          
+            
+            input#edit-submit{
+                margin-right:0px; 
+            }
         }
         .sharethis-buttons {
             margin-top: 10px;
@@ -1480,14 +1516,38 @@ body.section-product {
                 }
             }
         }
+        #commerce-checkout-form-checkout,#commerce-checkout-form-shipping,#commerce-checkout-form-review{
+            #edit-buttons{
+                text-align: right;
+            }
+            input.form-text{
+                width: 100%;
+            }
+        }
+        #commerce-shipping-service-details{
+            #edit-commerce-shipping-service-details{
+               a{
+                background: $main;
+                color: #FFF;
+                border: 2px #FFF solid;
+                border-radius: 5px;
+                padding: 5px 20px;
+               }
+            }
+        }
     }
     //end of content
     .sidebars {
         .region-sidebar-second {}
     }
 }
-
 //end of main
+#ui-timepicker-div{
+    z-index: 999 !important;
+}
+#ui-datepicker-div{
+    z-index: 9999 !important;
+}
 #map {
     #block-views-heiankyo-contact-block-2 {
         margin-bottom: 0px;

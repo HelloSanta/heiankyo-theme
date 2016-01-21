@@ -107,7 +107,7 @@ $(window).load(function(){
                 $('#block-menu-block-4').css('top', withoutMargin + 'px');
                 $('#block-menu-block-2').scrollToFixed({
                     marginTop: 40,
-                    zIndex: 999,
+                    zIndex: 99,
                     limit: $('#map').offset().top - $('#block-menu-block-2').outerHeight() - 50,
 
                     // limit:$('#main').outerHeight()+$('#header').outerHeight()-$('#block-menu-block-2').outerHeight(),

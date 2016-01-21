@@ -66,7 +66,6 @@
   
 
 <div id="page">
-<div id="particles-js"></div>
     <div id="main">
 
     <div id="content" class="column" role="main">
