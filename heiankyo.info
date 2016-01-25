@@ -72,7 +72,7 @@ stylesheets[all][] = css/animate.css
 
 scripts[] = js/jquery-scrolltofixed-min.js
 scripts[] = js/classie.js
-scripts[] = js/ads.js
+;scripts[] = js/ads.js
 scripts[] = js/jquery.slicknav.js
 
 scripts[] = js/jquery.meanmenu.min.js
